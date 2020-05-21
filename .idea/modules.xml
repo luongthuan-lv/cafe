@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidSever-BaseMVP.iml" filepath="$PROJECT_DIR$/AndroidSever-BaseMVP.iml" group="BaseMVP" />
       <module fileurl="file://$PROJECT_DIR$/BaseMVP.iml" filepath="$PROJECT_DIR$/BaseMVP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="BaseMVP/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="cafe-manager/app" />
+      <module fileurl="file://$PROJECT_DIR$/cafe-manager.iml" filepath="$PROJECT_DIR$/cafe-manager.iml" group="cafe-manager" />
     </modules>
   </component>
 </project>
