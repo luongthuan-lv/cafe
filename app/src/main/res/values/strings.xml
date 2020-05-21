@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">My First App</string>
+    <string name="app_name">ExampleMvp</string>
+    <string name="app_name_dev">ExampleMvp Dev</string>
+    <string name="action_settings">Settings</string>
+    <string name="text_notify_sample">I am Notification Sample</string>
+    <string name="text_notify_channel_sample">Channel Notification Sample</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="server_client_id">477137413206-86ll9sl733devagf5l8rs16qj7l5n7va.apps.googleusercontent.com</string>
 </resources>

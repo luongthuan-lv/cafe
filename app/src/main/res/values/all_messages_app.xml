@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--App Message-->
+    <string name="api_retry_error">Please retry!</string>
+    <string name="api_default_error">Something wrong happened!</string>
+    <string name="some_error">Some Error Occurred!</string>
+    <string name="connection_error">Internet connection lost!</string>
+    <string name="text_all_has_error_please_try">Có lỗi xảy ra, vui lòng thử lại!</string>
+    <string name="text_all_has_error_timeout">Kết nối thất bại!</string>
+    <string name="text_all_has_error_network">Lỗi kết nối mạng!</string>
+</resources>
