@@ -34,7 +34,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     private static final String TAG = "LoginActivity";
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
