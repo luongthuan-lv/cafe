@@ -8,4 +8,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="server_client_id">477137413206-86ll9sl733devagf5l8rs16qj7l5n7va.apps.googleusercontent.com</string>
+    <string name="edt_user_hint">Tên tài khoản</string>
+    <string name="edt_pass_hint">Mật khẩu</string>
+    <string name="btn_login">Đăng nhập</string>
+    <string name="chk_remember_me">Nhớ mật khẩu?</string>
 </resources>

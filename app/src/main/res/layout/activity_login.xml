@@ -1,23 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/dp16"
     tools:context="vn.touchspace.example.ui.login.LoginActivity">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dp200"
+        android:layout_height="@dimen/dp200"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15"
+        tools:ignore="ContentDescription" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/edt_username"
+        style="@style/EditTextOrginal"
+        android:drawableStart="@drawable/ic_user"
+        android:drawableLeft="@drawable/ic_user"
+        android:hint="@string/edt_user_hint"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.46" />
 
-    <Button
+    <EditText
+        android:drawableLeft="@drawable/ic_lock"
+        android:id="@+id/edt_password"
+        style="@style/EditTextOrginal"
+        android:layout_marginTop="@dimen/dp16"
+        android:hint="@string/edt_pass_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_username"
+        android:drawableStart="@drawable/ic_lock"
+        android:inputType="textPassword"
+        android:importantForAutofill="no"
+        tools:ignore="TextFields" />
+
+    <CheckBox
+        android:id="@+id/chk_remember_me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:layout_marginTop="@dimen/dp16"
+        android:button="@drawable/checkbox_selector"
+        android:padding="@dimen/dp12"
+        android:text="@string/chk_remember_me"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
 
-</LinearLayout>
+    <Button
+        android:layout_marginTop="@dimen/dp16"
+        android:id="@+id/btn_login"
+        style="@style/ButtonOrginal"
+        android:text="@string/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chk_remember_me" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
