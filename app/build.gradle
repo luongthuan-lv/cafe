@@ -111,12 +111,12 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
 
     //circle image
-    implementation 'de.hdodenhof:circleimageview:3.0.1'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     //butter knife
     implementation 'com.jakewharton:butterknife:10.2.1'
     testImplementation 'junit:junit:4.13'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation 'com.google.android.material:material:1.1.0'
 }

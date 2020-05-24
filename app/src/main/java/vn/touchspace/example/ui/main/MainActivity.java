@@ -5,23 +5,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.touchspace.example.R;
 
 import javax.inject.Inject;
 
-import butterknife.BindDimen;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 import vn.touchspace.example.data.room.model.User;
 import vn.touchspace.example.service.notify.NotifyService;
 import vn.touchspace.example.ui.base.BaseActivity;
 import vn.touchspace.example.ui.login.LoginActivity;
-import vn.touchspace.example.ui.rate.RateDialog;
 
 public class MainActivity extends BaseActivity implements MainMvpView {
 
@@ -31,17 +24,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Inject
     NotifyService mNotifyService;
 
-    @BindView(R.id.edt_user)
-    EditText edtUser;
-    @BindView(R.id.btn_save)
-    Button btnSave;
-    @BindView(R.id.btn_getAll)
-    Button btnGetAll;
-    @BindView(R.id.btn_find)
-    Button btnFind;
-
-    @BindDimen(R.dimen.dp24)
-    int dp24;
 
     private static final String TAG = "MainActivity";
 
@@ -83,11 +65,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @OnClick(R.id.btn_logout)
-    public void logout() {
-        mMainPresenter.logout();
     }
 
     @Override
