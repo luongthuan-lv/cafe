@@ -40,6 +40,8 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
 
     private static final String TAG = "LoginPresenter";
 
+
+
     @Override
     public void onServerLoginClick(final String username, final String password) {
         if (!getMvpView().isDoubleClick()) {

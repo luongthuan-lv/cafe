@@ -60,8 +60,9 @@ public class AppApiHelper implements ApiService {
         return RequestBody.create(MediaType.parse("application/json; charset=utf-8"), object.toString());
     }
 
+
     @Override
-    public Single<SignIn> signIn(@Body SignInRequest signInRequest) {
+    public Single<SignIn> signIn(SignInRequest signInRequest) {
         return apiService.signIn(signInRequest);
     }
 }
