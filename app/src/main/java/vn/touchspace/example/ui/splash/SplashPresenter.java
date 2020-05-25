@@ -40,7 +40,7 @@ public class SplashPresenter<V extends SplashMvpView> extends BasePresenter<V>
         Account account = getDataManager().findFirst(Account.class);
         if (account != null) {
             SignInRequest signInRequest = new SignInRequest();
-            signInRequest.email = account.username;
+            signInRequest.username = account.username;
             signInRequest.password = account.password;
             getCompositeDisposable().add(getDataManager()
                     .signIn(signInRequest)

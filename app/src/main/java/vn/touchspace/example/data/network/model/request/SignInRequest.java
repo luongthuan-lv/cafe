@@ -8,8 +8,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class SignInRequest {
 
-    @SerializedName("email")
-    public String email;
+    @SerializedName("username")
+    public String username;
     @SerializedName("password")
     public String password;
 }

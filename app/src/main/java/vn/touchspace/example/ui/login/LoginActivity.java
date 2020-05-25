@@ -67,5 +67,6 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @OnClick(R.id.btn_login)
     public void onViewClicked() {
+        mLoginPresenter.onServerLoginClick(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
     }
 }

@@ -40,7 +40,7 @@ android {
             versionCode 1
             versionName "1.0"
             multiDexEnabled true
-            buildConfigField "String", URL_END_POINT, "\"http://45.252.248.202:8004/\""
+            buildConfigField "String", URL_END_POINT, "\"http://10.24.1.60:1212/\""
         }
 
         production {
@@ -50,7 +50,7 @@ android {
             versionCode 1
             versionName "1.0"
             multiDexEnabled true
-            buildConfigField "String", URL_END_POINT, "\"http://45.252.248.202:8004/\""
+            buildConfigField "String", URL_END_POINT, "\"http://10.24.1.60:1212/\""
         }
     }
 }

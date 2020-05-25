@@ -1,5 +1,6 @@
 package vn.touchspace.example.ui.login;
 
+import android.os.Handler;
 import android.text.TextUtils;
 
 import com.touchspace.example.R;
@@ -20,6 +21,7 @@ import io.reactivex.functions.Consumer;
 
 import static vn.touchspace.example.data.prefs.AppPreferencesHelper.PREF_KEY_PASSWORD;
 import static vn.touchspace.example.data.prefs.AppPreferencesHelper.PREF_KEY_USERNAME;
+import static vn.touchspace.example.data.prefs.AppPreferencesHelper.PREF_KEY_USER_ID;
 
 /**
  * Created by GNUD on 02/12/2017.
@@ -39,47 +41,33 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
     private static final String TAG = "LoginPresenter";
 
     @Override
-    public void onServerLoginClick(final String email, final String password) {
-        //validate email and password
+    public void onServerLoginClick(final String username, final String password) {
         if (!getMvpView().isDoubleClick()) {
-            if (TextUtils.isEmpty(email)) {
-                getMvpView().onError(R.string.empty_email);
-                return;
-            }
-            if (!CommonUtils.isEmailValid(email)) {
-                getMvpView().onError(R.string.invalid_email);
-                return;
-            }
-            if (TextUtils.isEmpty(password)) {
-                getMvpView().onError(R.string.empty_password);
-                return;
-            }
-            AppLogger.d("email: " + email);
-            AppLogger.d("password: " + password);
             SignInRequest signInRequest = new SignInRequest();
-            signInRequest.email = email;
-            signInRequest.password = password;
+            signInRequest.username = username;
+            signInRequest.username = password;
+
             getMvpView().showLoading();
             getCompositeDisposable().add(getDataManager()
                     .signIn(signInRequest)
                     .subscribeOn(getSchedulerProvider().io())
                     .observeOn(getSchedulerProvider().ui())
-                    .subscribe(signIn -> {
+                    .subscribe(user -> {
                         if (!isViewAttached()) {
                             return;
                         }
-                        getMvpView().hideLoading();
+
+                        new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                         getDataManager().clear(Account.class);
-                        getDataManager().save(new Account(email, password));
-                        getDataManager().save(PREF_KEY_USERNAME, email);
-                        getDataManager().save(PREF_KEY_PASSWORD, password);
+                        getDataManager().save(new Account(username, password));
+                        getDataManager().save(PREF_KEY_USER_ID, user.getId());
                         getMvpView().openMainActivity();
 
                     }, throwable -> {
                         if (!isViewAttached()) {
                             return;
                         }
-                        getMvpView().hideLoading();
+                        new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                         handleApiError(throwable);
                     })
             );

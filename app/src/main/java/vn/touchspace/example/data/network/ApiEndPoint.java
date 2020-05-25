@@ -6,5 +6,5 @@ package vn.touchspace.example.data.network;
 
 public final class ApiEndPoint {
 
-    static final String ENDPOINT_SIGN_IN = "api/users/login";
+    static final String ENDPOINT_SIGN_IN = "login";
 }
