@@ -9,4 +9,6 @@ import vn.touchspace.example.ui.base.MvpPresenter;
 public interface LoginMvpPresenter<V extends LoginMvpView> extends MvpPresenter<V> {
 
     void onServerLoginClick(String email, String password);
+
+    void checkLogin();
 }

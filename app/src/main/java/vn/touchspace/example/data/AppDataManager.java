@@ -8,7 +8,6 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import vn.touchspace.example.data.network.ApiService;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
-import vn.touchspace.example.data.network.model.response.SignIn;
 import vn.touchspace.example.data.prefs.PreferencesHelper;
 import vn.touchspace.example.data.realm.RealmHelper;
 import vn.touchspace.example.data.room.DbHelper;
@@ -52,12 +51,6 @@ public class AppDataManager implements DataManager {
         this.mApiService = apiService;
         this.mDbHelper = mDbHelper;
     }
-
-    @Override
-    public Single<SignIn> signIn(@Body SignInRequest signInRequest) {
-        return mApiService.signIn(signInRequest);
-    }
-
     @Override
     public void save(String key, boolean value) {
         mPreferencesHelper.save(key, value);
@@ -191,5 +184,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Observable<List<User>> getAllUsers() {
         return mDbHelper.getAllUsers();
+    }
+
+    @Override
+    public Single<vn.touchspace.example.data.network.model.response.User> signIn(SignInRequest signInRequest) {
+        return mApiService.signIn(signInRequest);
     }
 }

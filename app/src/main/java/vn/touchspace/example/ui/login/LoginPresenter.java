@@ -43,11 +43,11 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
 
 
     @Override
-    public void onServerLoginClick(final String username, final String password) {
+    public void onServerLoginClick(String username, String password) {
         if (!getMvpView().isDoubleClick()) {
             SignInRequest signInRequest = new SignInRequest();
             signInRequest.username = username;
-            signInRequest.username = password;
+            signInRequest.password = password;
 
             getMvpView().showLoading();
             getCompositeDisposable().add(getDataManager()
@@ -64,7 +64,6 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
                         getDataManager().save(new Account(username, password));
                         getDataManager().save(PREF_KEY_USER_ID, user.getId());
                         getMvpView().openMainActivity();
-
                     }, throwable -> {
                         if (!isViewAttached()) {
                             return;
@@ -73,6 +72,13 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
                         handleApiError(throwable);
                     })
             );
+        }
+    }
+
+    @Override
+    public void checkLogin() {
+        if (getDataManager().getString(PREF_KEY_USER_ID) != null) {
+            getMvpView().openMainActivity();
         }
     }
 }

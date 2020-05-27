@@ -11,11 +11,4 @@ public interface MainMvpPresenter<V extends MainMvpView> extends MvpPresenter<V>
 
     void logout();
 
-    void saveUser(User user);
-
-    void getAll();
-
-    void findUser(String name);
-
-    void getRealm();
 }

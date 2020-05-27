@@ -11,5 +11,4 @@ public interface MainMvpView extends MvpView {
 
     void openLoginActivity();
 
-    void findUserByName(User user);
 }

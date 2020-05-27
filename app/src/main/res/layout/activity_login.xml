@@ -25,7 +25,6 @@
         android:id="@+id/edt_username"
         style="@style/EditTextOrginal"
         android:drawableStart="@drawable/ic_user"
-        android:drawableLeft="@drawable/ic_user"
         android:hint="@string/edt_user_hint"
         android:importantForAutofill="no"
         android:inputType="text"
@@ -33,7 +32,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.46" />
+        app:layout_constraintVertical_bias="0.46"
+        android:drawableLeft="@drawable/ic_user" />
 
     <EditText
         android:drawableLeft="@drawable/ic_lock"
@@ -49,18 +49,18 @@
         android:importantForAutofill="no"
         tools:ignore="TextFields" />
 
-    <CheckBox
-        android:id="@+id/chk_remember_me"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp16"
-        android:button="@drawable/checkbox_selector"
-        android:padding="@dimen/dp12"
-        android:text="@string/chk_remember_me"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+<!--    <CheckBox-->
+<!--        android:id="@+id/chk_remember_me"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="@dimen/dp16"-->
+<!--        android:button="@drawable/checkbox_selector"-->
+<!--        android:padding="@dimen/dp12"-->
+<!--        android:text="@string/chk_remember_me"-->
+<!--        android:textColor="@color/colorPrimary"-->
+<!--        android:textSize="@dimen/sp15"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/edt_password" />-->
 
     <Button
         android:layout_marginTop="@dimen/dp16"
@@ -69,6 +69,6 @@
         android:text="@string/btn_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chk_remember_me" />
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

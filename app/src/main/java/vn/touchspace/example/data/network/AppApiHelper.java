@@ -20,6 +20,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import vn.touchspace.example.data.network.model.response.User;
 
 /**
  * Created by GNUD on 02/12/2017.
@@ -62,7 +63,7 @@ public class AppApiHelper implements ApiService {
 
 
     @Override
-    public Single<SignIn> signIn(SignInRequest signInRequest) {
+    public Single<User> signIn(SignInRequest signInRequest) {
         return apiService.signIn(signInRequest);
     }
 }
