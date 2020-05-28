@@ -25,6 +25,18 @@ public class AppUtils {
         }
     }
 
+    public static String getRole(String role){
+        if(role.equals("director")){
+            return "giám đốc";
+        }else if (role.equals("manager")){
+            return "quản lý";
+        }else if (role.equals("waiter")){
+            return "nhân viên chạy bàn";
+        }else{
+            return "nhân viên pha chế";
+        }
+    }
+
     private static String correctNumber(String number) {
         return number.replaceAll("[\\D]", "");
     }

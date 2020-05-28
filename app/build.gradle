@@ -40,7 +40,7 @@ android {
             versionCode 1
             versionName "1.0"
             multiDexEnabled true
-            buildConfigField "String", URL_END_POINT, "\"http://192.168.1.5:6969/\""
+            buildConfigField "String", URL_END_POINT, "\"http://192.168.1.5:8888/\""
         }
 
         production {
@@ -50,7 +50,7 @@ android {
             versionCode 1
             versionName "1.0"
             multiDexEnabled true
-            buildConfigField "String", URL_END_POINT, "\"http://192.168.1.5:6969/\""
+            buildConfigField "String", URL_END_POINT, "\"http://192.168.1.5:8888/\""
         }
     }
 }
@@ -119,4 +119,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation 'com.google.android.material:material:1.1.0'
+
+    implementation 'android.arch.navigation:navigation-fragment:1.0.0'
+    implementation 'android.arch.navigation:navigation-ui:1.0.0'
 }

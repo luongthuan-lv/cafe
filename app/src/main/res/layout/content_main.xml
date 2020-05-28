@@ -1,63 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="vn.touchspace.example.ui.main.MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <Button
-        android:id="@+id/btn_logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log out" />
-
-    <EditText
-        android:id="@+id/edt_user"
+    <fragment
+        android:id="@+id/nav_host_fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:textSize="@dimen/sp14" />
-
-    <Button
-        android:id="@+id/btn_getAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get All"
-        android:textSize="@dimen/sp16" />
-
-    <Button
-        android:id="@+id/btn_find"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find User"
-        android:textSize="@dimen/sp22" />
-
-    <Button
-        android:id="@+id/btn_notify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Set Notify" />
-
-    <Button
-        android:id="@+id/btn_notify_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancel Notify"
-        android:textSize="@dimen/sp36" />
-
-
-    <Button
-        android:id="@+id/btn_realm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Get Account" />
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+</androidx.constraintlayout.widget.ConstraintLayout>

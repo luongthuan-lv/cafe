@@ -48,7 +48,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
         mLoginPresenter.onAttach(LoginActivity.this);
 
-//        mLoginPresenter.checkLogin();
+        mLoginPresenter.checkLogin();
 
     }
 

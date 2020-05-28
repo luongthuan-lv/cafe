@@ -12,4 +12,10 @@
     <string name="edt_pass_hint">Mật khẩu</string>
     <string name="btn_login">Đăng nhập</string>
     <string name="chk_remember_me">Nhớ mật khẩu?</string>
+    <string name="menu_invoice">Hóa đơn</string>
+    <string name="menu_account">Quản lý tài khoản</string>
+    <string name="menu_product">Sản Phẩm</string>
+    <string name="menu_statistical">Thống kê</string>
+    <string name="menu_info">Cá nhân</string>
+    <string name="menu_logout">Đăng xuất</string>
 </resources>

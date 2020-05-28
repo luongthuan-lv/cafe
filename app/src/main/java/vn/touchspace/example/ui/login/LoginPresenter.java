@@ -7,6 +7,7 @@ import com.touchspace.example.R;
 import vn.touchspace.example.data.DataManager;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.response.SignIn;
+import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.data.realm.model.Account;
 import vn.touchspace.example.ui.base.BasePresenter;
 import vn.touchspace.example.utils.AppLogger;
@@ -60,8 +61,8 @@ public class LoginPresenter<V extends LoginMvpView> extends BasePresenter<V>
                         }
 
                         new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
-                        getDataManager().clear(Account.class);
-                        getDataManager().save(new Account(username, password));
+                        getDataManager().clear(User.class);
+                        getDataManager().save(user);
                         getDataManager().save(PREF_KEY_USER_ID, user.getId());
                         getMvpView().openMainActivity();
                     }, throwable -> {

@@ -1,6 +1,6 @@
 package vn.touchspace.example.ui.main;
 
-import vn.touchspace.example.data.room.model.User;
+import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.MvpView;
 
 /**
@@ -10,5 +10,7 @@ import vn.touchspace.example.ui.base.MvpView;
 public interface MainMvpView extends MvpView {
 
     void openLoginActivity();
+
+    void getUserInfoSuccess(User user);
 
 }
