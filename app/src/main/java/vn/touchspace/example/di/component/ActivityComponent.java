@@ -20,6 +20,11 @@ import vn.touchspace.example.di.PerActivity;
 import vn.touchspace.example.di.module.ActivityModule;
 import vn.touchspace.example.ui.login.LoginActivity;
 import vn.touchspace.example.ui.main.MainActivity;
+import vn.touchspace.example.ui.main.account.AccountFragment;
+import vn.touchspace.example.ui.main.info.InfoFragment;
+import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
+import vn.touchspace.example.ui.main.product.ProductFragment;
+import vn.touchspace.example.ui.main.statistical.StatisticalFragment;
 import vn.touchspace.example.ui.splash.SplashActivity;
 
 import dagger.Component;
@@ -37,5 +42,15 @@ public interface ActivityComponent {
     void inject(LoginActivity activity);
 
     void inject(SplashActivity activity);
+
+    void inject(InfoFragment fragment);
+
+//    void inject(StatisticalFragment fragment);
+//
+//    void inject(AccountFragment fragment);
+//
+//    void inject(InvoiceFragment fragment);
+//
+//    void inject(ProductFragment fragment);
 
 }

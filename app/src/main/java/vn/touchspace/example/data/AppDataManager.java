@@ -7,7 +7,10 @@ import java.util.List;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import vn.touchspace.example.data.network.ApiService;
+import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
+import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
+import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.prefs.PreferencesHelper;
 import vn.touchspace.example.data.realm.RealmHelper;
 import vn.touchspace.example.data.room.DbHelper;
@@ -187,7 +190,17 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Single<vn.touchspace.example.data.network.model.response.User> signIn(SignInRequest signInRequest) {
-        return mApiService.signIn(signInRequest);
+    public Single<vn.touchspace.example.data.network.model.response.User> signIn(SignInRequest request) {
+        return mApiService.signIn(request);
+    }
+
+    @Override
+    public Single<Message> updateInfo(UpdateInfoRequest request) {
+        return mApiService.updateInfo(request);
+    }
+
+    @Override
+    public Single<Message> updatePassword(UpdatePasswordRequest request) {
+        return mApiService.updatePassword(request);
     }
 }

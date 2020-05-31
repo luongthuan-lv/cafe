@@ -1,13 +1,45 @@
 package vn.touchspace.example.ui.main.info;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.touchspace.example.R;
 
-import vn.touchspace.example.ui.base.BaseFragment;
+import java.util.Objects;
 
-public class InfoFragment extends BaseFragment {
+import javax.inject.Inject;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import vn.touchspace.example.data.network.model.response.User;
+import vn.touchspace.example.ui.base.BaseFragment;
+import vn.touchspace.example.utils.AppUtils;
+
+public class InfoFragment extends BaseFragment implements InfoMvpView {
+
+    @Inject
+    InfoMvpPresenter<InfoMvpView> mInfoPresenter;
+    @BindView(R.id.tv_avatar)
+    TextView tvAvatar;
+    @BindView(R.id.tv_role)
+    TextView tvRole;
+    @BindView(R.id.tv_name)
+    TextView tvName;
+    @BindView(R.id.tv_birthday)
+    TextView tvBirthday;
+    @BindView(R.id.tv_telephone)
+    TextView tvTelephone;
+    @BindView(R.id.tv_update_info)
+    TextView tvUpdateInfo;
+    @BindView(R.id.tv_update_pass)
+    TextView tvUpdatePass;
+    @BindView(R.id.tv_version)
+    TextView tvVersion;
 
     public static InfoFragment newInstance() {
 
@@ -19,17 +51,60 @@ public class InfoFragment extends BaseFragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getActivityComponent().inject(this);
+
+        mInfoPresenter.onAttach(this);
+
+    }
+
+    @Override
     protected int getLayoutResource() {
         return R.layout.fragment_info;
     }
 
     @Override
     protected void init(Bundle saveInstanceState, View rootView) {
-
+        mInfoPresenter.getInfo();
     }
 
     @Override
     protected void setUp(View view) {
 
+    }
+
+    @OnClick({R.id.tv_update_info, R.id.tv_update_pass})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_update_info:
+                break;
+            case R.id.tv_update_pass:
+                break;
+        }
+    }
+
+    @Override
+    public void getInfoSuccess(User user) {
+        tvName.setText(user.getFullName());
+        setDefaultAvatar(user.getFullName());
+        tvRole.setText(AppUtils.getRole(user.getRole()));
+        tvBirthday.setText(user.getBirthday());
+        tvTelephone.setText(user.getTelephoneNumber());
+    }
+
+    private void setDefaultAvatar(String username) {
+        //set avatar bằng các chữ cái đầu
+        String nameSet = "";
+        String[] name = username.split(" ");
+        for (int i = 0; i < name.length; i++) {
+            String s = name[i];
+            nameSet = nameSet + s.charAt(0);
+        }
+        if (nameSet.length() > 1) {
+            nameSet = nameSet.substring(nameSet.length() - 2);
+        }
+        tvAvatar.setText(nameSet);
+        tvAvatar.setVisibility(View.VISIBLE);
     }
 }

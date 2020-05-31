@@ -25,7 +25,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
     EditText edtUsername;
     @BindView(R.id.edt_password)
     EditText edtPassword;
-//    @BindView(R.id.chk_remember_me)
+    //    @BindView(R.id.chk_remember_me)
 //    CheckBox chkRememberMe;
     @BindView(R.id.btn_login)
     Button btnLogin;
@@ -50,11 +50,13 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
         mLoginPresenter.checkLogin();
 
+        setUp();
     }
 
     @Override
     protected void setUp() {
-
+        edtUsername.setText("Thuận");
+        edtPassword.setText("12345");
     }
 
 
@@ -89,7 +91,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @Override
     public void onBackPressed() {
-        if(backPressedTime + 2000 > System.currentTimeMillis()) {
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
             finish();
             return;
         } else {

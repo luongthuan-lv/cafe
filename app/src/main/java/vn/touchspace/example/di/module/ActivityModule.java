@@ -30,6 +30,9 @@ import vn.touchspace.example.ui.login.LoginPresenter;
 import vn.touchspace.example.ui.main.MainMvpPresenter;
 import vn.touchspace.example.ui.main.MainMvpView;
 import vn.touchspace.example.ui.main.MainPresenter;
+import vn.touchspace.example.ui.main.info.InfoMvpPresenter;
+import vn.touchspace.example.ui.main.info.InfoMvpView;
+import vn.touchspace.example.ui.main.info.InfoPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpView;
 import vn.touchspace.example.ui.splash.SplashPresenter;
@@ -92,6 +95,13 @@ public class ActivityModule {
     @PerActivity
     MainMvpPresenter<MainMvpView> provideMainPresenter(
             MainPresenter<MainMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    InfoMvpPresenter<InfoMvpView> provideInfoPresenter(
+            InfoPresenter<InfoMvpView> presenter) {
         return presenter;
     }
 

@@ -1,7 +1,11 @@
 package vn.touchspace.example.data.network;
 
 import com.touchspace.example.BuildConfig;
+
+import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
+import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
+import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.response.SignIn;
 
 import org.json.JSONObject;
@@ -63,7 +67,18 @@ public class AppApiHelper implements ApiService {
 
 
     @Override
-    public Single<User> signIn(SignInRequest signInRequest) {
-        return apiService.signIn(signInRequest);
+    public Single<User> signIn(SignInRequest request) {
+        return apiService.signIn(request);
     }
+
+    @Override
+    public Single<Message> updateInfo(UpdateInfoRequest request) {
+        return apiService.updateInfo(request);
+    }
+
+    @Override
+    public Single<Message> updatePassword(UpdatePasswordRequest request) {
+        return apiService.updatePassword(request);
+    }
+
 }
