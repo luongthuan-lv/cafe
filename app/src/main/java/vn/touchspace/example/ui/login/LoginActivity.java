@@ -18,6 +18,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import vn.touchspace.example.ui.base.BaseActivity;
 import vn.touchspace.example.ui.main.MainActivity;
+import vn.touchspace.example.utils.AppUtils;
 
 public class LoginActivity extends BaseActivity implements LoginMvpView {
 
@@ -80,7 +81,7 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
         } else {
             mLoginPresenter.onServerLoginClick(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
         }
-        isDoubleClick(btnLogin);
+        AppUtils.isDoubleClick(btnLogin);
     }
 
 

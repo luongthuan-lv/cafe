@@ -33,6 +33,12 @@ import vn.touchspace.example.ui.main.MainPresenter;
 import vn.touchspace.example.ui.main.info.InfoMvpPresenter;
 import vn.touchspace.example.ui.main.info.InfoMvpView;
 import vn.touchspace.example.ui.main.info.InfoPresenter;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoMvpPresenter;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoMvpView;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoPresenter;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpPresenter;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpView;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpView;
 import vn.touchspace.example.ui.splash.SplashPresenter;
@@ -104,6 +110,21 @@ public class ActivityModule {
             InfoPresenter<InfoMvpView> presenter) {
         return presenter;
     }
+
+    @Provides
+    @PerActivity
+    UpdateInfoMvpPresenter<UpdateInfoMvpView> provideUpdateInfoPresenter(
+            UpdateInfoPresenter<UpdateInfoMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    UpdatePasswordMvpPresenter<UpdatePasswordMvpView> provideUpdatePasswordPresenter(
+            UpdatePasswordPresenter<UpdatePasswordMvpView> presenter) {
+        return presenter;
+    }
+
 
     @Provides
     LinearLayoutManager provideLinearLayoutManager(AppCompatActivity activity) {

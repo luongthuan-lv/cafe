@@ -22,6 +22,8 @@ import vn.touchspace.example.ui.login.LoginActivity;
 import vn.touchspace.example.ui.main.MainActivity;
 import vn.touchspace.example.ui.main.account.AccountFragment;
 import vn.touchspace.example.ui.main.info.InfoFragment;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoActivity;
+import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordActivity;
 import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
 import vn.touchspace.example.ui.main.product.ProductFragment;
 import vn.touchspace.example.ui.main.statistical.StatisticalFragment;
@@ -45,12 +47,16 @@ public interface ActivityComponent {
 
     void inject(InfoFragment fragment);
 
-//    void inject(StatisticalFragment fragment);
-//
-//    void inject(AccountFragment fragment);
-//
-//    void inject(InvoiceFragment fragment);
-//
-//    void inject(ProductFragment fragment);
+    void inject(UpdateInfoActivity activity);
+
+    void inject(UpdatePasswordActivity activity);
+
+    void inject(StatisticalFragment fragment);
+
+    void inject(AccountFragment fragment);
+
+    void inject(InvoiceFragment fragment);
+
+    void inject(ProductFragment fragment);
 
 }

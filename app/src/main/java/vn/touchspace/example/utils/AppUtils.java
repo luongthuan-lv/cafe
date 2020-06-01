@@ -2,6 +2,8 @@ package vn.touchspace.example.utils;
 
 import android.annotation.SuppressLint;
 import android.graphics.Paint;
+import android.os.Handler;
+import android.view.View;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -35,6 +37,11 @@ public class AppUtils {
         }else{
             return "nhân viên pha chế";
         }
+    }
+
+    public static void isDoubleClick(View view) {
+        view.setEnabled(false);
+        new Handler().postDelayed(() -> view.setEnabled(true), 500);
     }
 
     private static String correctNumber(String number) {
