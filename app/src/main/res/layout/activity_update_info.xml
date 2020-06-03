@@ -19,7 +19,7 @@
             android:background="@null"
             android:hint="@string/str_name"
             android:gravity="bottom"
-            android:id="@+id/tv_new_name"
+            android:id="@+id/edt_new_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp16"
@@ -35,9 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp1" />
 
-        <EditText
-            android:background="@null"
-            android:id="@+id/tv_new_birthday"
+        <TextView
+            android:id="@+id/edt_new_birthday"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp8"
@@ -54,20 +53,21 @@
             android:background="@color/line"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp1"/>
+
+
         <EditText
-            android:background="@null"
-            android:hint="@string/str_phone"
-            android:gravity="bottom"
-            android:id="@+id/tv_new_phone"
+            android:id="@+id/edt_new_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp8"
-            android:textColor="@color/colorPrimary"
+            android:background="@null"
+            android:drawableStart="@drawable/ic_phone"
             android:drawableLeft="@drawable/ic_phone"
             android:drawablePadding="@dimen/dp16"
-            android:textSize="@dimen/sp16"
-            android:drawableStart="@drawable/ic_phone"/>
-
+            android:gravity="bottom"
+            android:hint="@string/str_phone"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp16" />
 
         <View
             android:layout_marginTop="@dimen/dp8"

@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 import vn.touchspace.example.data.DataManager;
+import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.BasePresenter;
 import vn.touchspace.example.utils.rx.SchedulerProvider;
 
@@ -17,4 +18,9 @@ public class UpdatePasswordPresenter<V extends UpdatePasswordMvpView> extends Ba
         super(dataManager, schedulerProvider, compositeDisposable);
     }
 
+    @Override
+    public void getInfo() {
+        User user = getDataManager().findFirst(User.class);
+        getMvpView().getInfoSuccess(user);
+    }
 }

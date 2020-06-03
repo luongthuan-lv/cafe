@@ -20,4 +20,9 @@ public class UpdateInfoPresenter<V extends UpdateInfoMvpView> extends BasePresen
         super(dataManager, schedulerProvider, compositeDisposable);
     }
 
+    @Override
+    public void getInfo() {
+        User user = getDataManager().findFirst(User.class);
+        getMvpView().getInfoSuccess(user);
+    }
 }

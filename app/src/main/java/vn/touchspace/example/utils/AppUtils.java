@@ -27,6 +27,13 @@ public class AppUtils {
         }
     }
 
+    public static String convertTime(long time) {
+
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        return df.format(time);
+
+    }
+
     public static String getRole(String role){
         if(role.equals("director")){
             return "giám đốc";
