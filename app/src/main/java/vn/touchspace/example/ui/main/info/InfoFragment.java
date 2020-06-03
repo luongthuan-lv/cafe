@@ -97,6 +97,12 @@ public class InfoFragment extends BaseFragment implements InfoMvpView {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mInfoPresenter.getInfo();
+    }
+
+    @Override
     public void getInfoSuccess(User user) {
         this.user = user;
         tvName.setText(user.getFullName());

@@ -65,10 +65,6 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
     protected void setUp() {
         tvTitle.setText(R.string.title_update_info);
 
-        edtNewName.setText(user.getFullName());
-        edtNewBirthday.setText(user.getBirthday());
-        edtNewPhone.setText(user.getTelephoneNumber());
-
         date = Calendar.getInstance();
     }
 
@@ -107,7 +103,7 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
                     if (edtNewPhone.getText().toString().trim().length() != 10) {
                         Toast.makeText(UpdateInfoActivity.this, "Số điện thoại phải có 10 chữ số!", Toast.LENGTH_SHORT).show();
                     } else {
-
+                            mvpPresenter.updateInfo(edtNewName.getText().toString().trim(), edtNewBirthday.getText().toString().trim(), edtNewPhone.getText().toString().trim());
                     }
                 }
                 AppUtils.isDoubleClick(btnSave);
@@ -118,5 +114,15 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
     @Override
     public void getInfoSuccess(User user) {
         this.user = user;
+
+        edtNewName.setText(user.getFullName());
+        edtNewBirthday.setText(user.getBirthday());
+        edtNewPhone.setText(user.getTelephoneNumber());
+    }
+
+    @Override
+    public void updatePassword(String message) {
+        Toast.makeText(UpdateInfoActivity.this, message, Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

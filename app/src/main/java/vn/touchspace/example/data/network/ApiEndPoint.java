@@ -8,5 +8,5 @@ public final class ApiEndPoint {
 
     static final String ENDPOINT_SIGN_IN = "login";
     static final String ENDPOINT_UPDATE_INFO = "update-info";
-    static final String ENDPOINT_UPDATE_PASSWORD = "update-password";
+    static final String ENDPOINT_UPDATE_PASSWORD = "update-pass";
 }

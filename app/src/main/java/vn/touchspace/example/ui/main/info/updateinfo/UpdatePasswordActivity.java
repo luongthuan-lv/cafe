@@ -15,6 +15,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.BaseActivity;
 import vn.touchspace.example.utils.AppUtils;
@@ -69,10 +70,10 @@ public class UpdatePasswordActivity extends BaseActivity implements UpdatePasswo
                     if(!currentPass.equals(edtCurrentPass.getText().toString().trim())){
                         Toast.makeText(UpdatePasswordActivity.this, "Mật khẩu hiện tại chưa đúng!", Toast.LENGTH_SHORT).show();
                     }else{
-                        if(!edtRePass.getText().toString().trim().equals(edtCurrentPass.getText().toString().trim())){
+                        if(!edtRePass.getText().toString().trim().equals(edtNewPass.getText().toString().trim())){
                             Toast.makeText(UpdatePasswordActivity.this, "Mật khẩu mới chưa khớp!", Toast.LENGTH_SHORT).show();
                         }else{
-                            //
+                            mvpPresenter.updatePassword(edtNewPass.getText().toString().trim());
                         }
                     }
                 }
@@ -84,5 +85,11 @@ public class UpdatePasswordActivity extends BaseActivity implements UpdatePasswo
     @Override
     public void getInfoSuccess(User user) {
         currentPass = user.getPassword();
+    }
+
+    @Override
+    public void updatePassword(String message) {
+        Toast.makeText(UpdatePasswordActivity.this, message, Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

@@ -5,4 +5,6 @@ import vn.touchspace.example.ui.base.MvpView;
 
 public interface UpdateInfoMvpView extends MvpView {
     void getInfoSuccess(User user);
+
+    void updatePassword(String message);
 }
