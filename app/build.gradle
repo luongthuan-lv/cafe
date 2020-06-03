@@ -40,7 +40,7 @@ android {
             versionCode 1
             versionName "1.0"
             multiDexEnabled true
-            buildConfigField "String", URL_END_POINT, "\"http://192.168.1.6:8888/\""
+            buildConfigField "String", URL_END_POINT, "\"https://managecoffee.herokuapp.com/\""
         }
 
         production {
@@ -50,7 +50,7 @@ android {
             versionCode 1
             versionName "1.0"
             multiDexEnabled true
-            buildConfigField "String", URL_END_POINT, "\"http://192.168.1.6:8888/\""
+            buildConfigField "String", URL_END_POINT, "\"https://managecoffee.herokuapp.com/\""
         }
     }
 }

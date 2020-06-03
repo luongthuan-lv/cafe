@@ -23,4 +23,8 @@
     <string name="version">Phiên bản 1.0.0</string>
     <string name="title_update_info">Cập nhật thông tin</string>
     <string name="title_update_password">Đổi mật khẩu</string>
+    <string name="str_current_pass">Mật khẩu hiện tại</string>
+    <string name="str_new_pass">Mật khẩu mới</string>
+    <string name="str_re_pass">Nhập lại mật khẩu</string>
+    <string name="btn_save">Lưu</string>
 </resources>

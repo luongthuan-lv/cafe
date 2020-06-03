@@ -56,8 +56,8 @@ public class LoginActivity extends BaseActivity implements LoginMvpView {
 
     @Override
     protected void setUp() {
-        edtUsername.setText("Thuận");
-        edtPassword.setText("12345");
+        edtUsername.setText("Thuan");
+        edtPassword.setText("22222");
     }
 
 

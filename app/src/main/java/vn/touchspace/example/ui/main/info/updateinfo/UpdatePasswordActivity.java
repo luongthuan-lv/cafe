@@ -1,6 +1,8 @@
 package vn.touchspace.example.ui.main.info.updateinfo;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,6 +24,14 @@ public class UpdatePasswordActivity extends BaseActivity implements UpdatePasswo
     ImageView ivBack;
     @BindView(R.id.tv_title)
     TextView tvTitle;
+    @BindView(R.id.tv_current_pass)
+    TextView tvCurrentPass;
+    @BindView(R.id.tv_new_pass)
+    TextView tvNewPass;
+    @BindView(R.id.tv_re_pass)
+    TextView tvRePass;
+    @BindView(R.id.btn_save)
+    Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +49,16 @@ public class UpdatePasswordActivity extends BaseActivity implements UpdatePasswo
 
     }
 
-    @OnClick(R.id.iv_back)
-    public void onViewClicked() {
-        finish();
-        AppUtils.isDoubleClick(ivBack);
+    @OnClick({R.id.iv_back, R.id.btn_save})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                AppUtils.isDoubleClick(ivBack);
+                break;
+            case R.id.btn_save:
+                AppUtils.isDoubleClick(btnSave);
+                break;
+        }
     }
 }
