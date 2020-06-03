@@ -1,13 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/bg_color"
     tools:context="vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoActivity">
 
     <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/dp16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:background="@null"
+            android:hint="@string/str_name"
+            android:gravity="bottom"
+            android:id="@+id/tv_new_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:textColor="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_user_v3"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            android:drawableStart="@drawable/ic_user_v3"/>
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <EditText
+            android:background="@null"
+            android:id="@+id/tv_new_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:drawableStart="@drawable/ic_cake"
+            android:drawableLeft="@drawable/ic_cake"
+            android:drawablePadding="@dimen/dp16"
+            android:gravity="bottom"
+            android:hint="@string/str_new_birhday"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp16" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"/>
+        <EditText
+            android:background="@null"
+            android:hint="@string/str_phone"
+            android:gravity="bottom"
+            android:id="@+id/tv_new_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            android:drawableStart="@drawable/ic_phone"/>
+
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1"/>
+
+        <Button
+            android:layout_marginTop="@dimen/dp16"
+            android:id="@+id/btn_save"
+            style="@style/ButtonSmall"
+            android:text="@string/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -27,4 +27,8 @@
     <string name="str_new_pass">Mật khẩu mới</string>
     <string name="str_re_pass">Nhập lại mật khẩu</string>
     <string name="btn_save">Lưu</string>
+    <string name="str_name">Họ và tên</string>
+    <string name="str_phone">Số điện thoại</string>
+    <string name="str_new_location">Địa chỉ</string>
+    <string name="str_new_birhday">Ngày sinh</string>
 </resources>

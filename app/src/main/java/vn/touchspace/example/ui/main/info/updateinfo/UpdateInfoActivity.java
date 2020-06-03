@@ -1,6 +1,8 @@
 package vn.touchspace.example.ui.main.info.updateinfo;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +24,14 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
     ImageView ivBack;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-
+    @BindView(R.id.tv_new_name)
+    TextView tvNewName;
+    @BindView(R.id.tv_new_phone)
+    TextView tvNewPhone;
+    @BindView(R.id.tv_new_birthday)
+    TextView tvNewBirthday;
+    @BindView(R.id.btn_save)
+    Button btnSave;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,9 +48,15 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
 
     }
 
-    @OnClick(R.id.iv_back)
-    public void onViewClicked() {
-        finish();
-        AppUtils.isDoubleClick(ivBack);
+    @OnClick({R.id.iv_back, R.id.btn_save})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.btn_save:
+                AppUtils.isDoubleClick(btnSave);
+                break;
+        }
     }
 }
