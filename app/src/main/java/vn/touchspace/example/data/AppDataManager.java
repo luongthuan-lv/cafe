@@ -8,9 +8,13 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import vn.touchspace.example.data.network.ApiService;
 import vn.touchspace.example.data.network.model.Message;
+import vn.touchspace.example.data.network.model.request.AddProductRequest;
+import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
+import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.prefs.PreferencesHelper;
 import vn.touchspace.example.data.realm.RealmHelper;
 import vn.touchspace.example.data.room.DbHelper;
@@ -202,5 +206,25 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<Message> updatePassword(UpdatePasswordRequest request) {
         return mApiService.updatePassword(request);
+    }
+
+    @Override
+    public Single<List<Product>> getProducts() {
+        return mApiService.getProducts();
+    }
+
+    @Override
+    public Single<Message> createProduct(AddProductRequest request) {
+        return mApiService.createProduct(request);
+    }
+
+    @Override
+    public Single<Message> updateProduct(UpdateProductRequest request) {
+        return mApiService.updateProduct(request);
+    }
+
+    @Override
+    public Single<Message> removeProduct(RemoveRequest request) {
+        return mApiService.removeProduct(request);
     }
 }

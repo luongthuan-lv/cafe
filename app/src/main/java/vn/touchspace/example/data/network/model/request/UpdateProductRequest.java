@@ -6,8 +6,10 @@ import com.google.gson.annotations.SerializedName;
  * Created by GNUD on 02/12/2017.
  */
 
-public class AddProductRequest {
+public class UpdateProductRequest {
 
+    @SerializedName("id")
+    public String id;
     @SerializedName("productName")
     public String productName;
     @SerializedName("productPrice")
@@ -16,6 +18,4 @@ public class AddProductRequest {
     public String productImage;
     @SerializedName("productType")
     public String productType;
-    @SerializedName("productExport")
-    public String productExport;
 }

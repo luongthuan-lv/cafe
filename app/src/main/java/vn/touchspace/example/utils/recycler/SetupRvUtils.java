@@ -1,6 +1,8 @@
-package truong.myapp.catam.utils.recycler;
+package vn.touchspace.example.utils.recycler;
 
 import android.content.Context;
+import android.view.View;
+
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -8,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-import android.view.View;
 
 /**
  * Created by GNUD on 07/09/2017.

@@ -31,4 +31,5 @@
     <string name="str_phone">Số điện thoại</string>
     <string name="str_new_location">Địa chỉ</string>
     <string name="str_new_birhday">Ngày sinh</string>
+    <string name="search_bar_product_hint">Nhập vào tên sản phẩm</string>
 </resources>

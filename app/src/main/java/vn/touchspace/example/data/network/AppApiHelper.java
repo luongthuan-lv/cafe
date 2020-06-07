@@ -3,13 +3,18 @@ package vn.touchspace.example.data.network;
 import com.touchspace.example.BuildConfig;
 
 import vn.touchspace.example.data.network.model.Message;
+import vn.touchspace.example.data.network.model.request.AddProductRequest;
+import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
+import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.network.model.response.SignIn;
 
 import org.json.JSONObject;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
@@ -81,4 +86,23 @@ public class AppApiHelper implements ApiService {
         return apiService.updatePassword(request);
     }
 
+    @Override
+    public Single<List<Product>> getProducts() {
+        return apiService.getProducts();
+    }
+
+    @Override
+    public Single<Message> createProduct(AddProductRequest request) {
+        return apiService.createProduct(request);
+    }
+
+    @Override
+    public Single<Message> updateProduct(UpdateProductRequest request) {
+        return apiService.updateProduct(request);
+    }
+
+    @Override
+    public Single<Message> removeProduct(RemoveRequest request) {
+        return apiService.removeProduct(request);
+    }
 }

@@ -20,7 +20,7 @@ public class AppUtils {
     public static String formatNumber(String number) {
         DecimalFormat formatter = new DecimalFormat("###,###.###");
         try {
-            double d = Double.valueOf(correctNumber(number));
+            double d = Double.parseDouble(correctNumber(number));
             return formatter.format(d);
         } catch (Exception e) {
             return number;

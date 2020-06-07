@@ -6,16 +6,16 @@ import com.google.gson.annotations.SerializedName;
  * Created by GNUD on 02/12/2017.
  */
 
-public class AddCustomerRequest {
+public class AddProductRequest {
 
-    @SerializedName("username")
-    public String username;
-    @SerializedName("password")
-    public String password;
-    @SerializedName("username")
-    public String username;
-    @SerializedName("password")
-    public String password;
-    @SerializedName("username")
-    public String username;
+    @SerializedName("productName")
+    public String productName;
+    @SerializedName("productPrice")
+    public String productPrice;
+    @SerializedName("productImage")
+    public String productImage;
+    @SerializedName("productType")
+    public String productType;
+    @SerializedName("productExport")
+    public String productExport;
 }

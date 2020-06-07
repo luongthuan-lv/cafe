@@ -39,6 +39,9 @@ import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoPresenter;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpPresenter;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpView;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordPresenter;
+import vn.touchspace.example.ui.main.product.ProductMvpPresenter;
+import vn.touchspace.example.ui.main.product.ProductMvpView;
+import vn.touchspace.example.ui.main.product.ProductPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpView;
 import vn.touchspace.example.ui.splash.SplashPresenter;
@@ -122,6 +125,13 @@ public class ActivityModule {
     @PerActivity
     UpdatePasswordMvpPresenter<UpdatePasswordMvpView> provideUpdatePasswordPresenter(
             UpdatePasswordPresenter<UpdatePasswordMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    ProductMvpPresenter<ProductMvpView> provideProductPresenter(
+            ProductPresenter<ProductMvpView> presenter) {
         return presenter;
     }
 

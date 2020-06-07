@@ -27,7 +27,7 @@ import vn.touchspace.example.utils.AppUtils;
 public class InfoFragment extends BaseFragment implements InfoMvpView {
 
     @Inject
-    InfoMvpPresenter<InfoMvpView> mInfoPresenter;
+    InfoMvpPresenter<InfoMvpView> mPresenter;
     @BindView(R.id.tv_avatar)
     TextView tvAvatar;
     @BindView(R.id.tv_role)
@@ -61,7 +61,7 @@ public class InfoFragment extends BaseFragment implements InfoMvpView {
         super.onCreate(savedInstanceState);
         getActivityComponent().inject(this);
 
-        mInfoPresenter.onAttach(this);
+        mPresenter.onAttach(this);
 
     }
 
@@ -72,7 +72,13 @@ public class InfoFragment extends BaseFragment implements InfoMvpView {
 
     @Override
     protected void init(Bundle saveInstanceState, View rootView) {
-        mInfoPresenter.getInfo();
+        mPresenter.getInfo();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mPresenter.onDetach();
     }
 
     @Override
@@ -99,7 +105,7 @@ public class InfoFragment extends BaseFragment implements InfoMvpView {
     @Override
     public void onResume() {
         super.onResume();
-        mInfoPresenter.getInfo();
+        mPresenter.getInfo();
     }
 
     @Override

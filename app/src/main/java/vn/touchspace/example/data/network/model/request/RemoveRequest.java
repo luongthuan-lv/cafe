@@ -6,10 +6,8 @@ import com.google.gson.annotations.SerializedName;
  * Created by GNUD on 02/12/2017.
  */
 
-public class SignInRequest {
+public class RemoveRequest {
 
-    @SerializedName("username")
-    public String username;
-    @SerializedName("password")
-    public String password;
+    @SerializedName("id")
+    public String id;
 }
