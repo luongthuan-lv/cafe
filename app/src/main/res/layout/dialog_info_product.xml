@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_primary_radius20"
+    android:padding="@dimen/dp20">
+
+    <ImageView
+        android:id="@+id/img_product"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/img_late"
+        android:layout_width="@dimen/dp120"
+        android:layout_height="@dimen/dp120"
+        tools:ignore="ContentDescription" />
+    
+    <TextView
+        android:id="@+id/tv_name"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/dp16"
+        android:textSize="@dimen/sp20"
+        android:textColor="@color/colorPrimary"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    
+    <TextView
+        android:id="@+id/tv_price"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginVertical="@dimen/dp12"
+        android:id="@+id/tv_type"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_export"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp8"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_marginRight="@dimen/dp20"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:id="@+id/btn_update"
+            style="@style/ButtonSmall"
+            android:text="@string/btn_update"
+            android:layout_marginEnd="@dimen/dp20" />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:id="@+id/btn_remove"
+            style="@style/ButtonSmall"
+            android:text="@string/btn_remove"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

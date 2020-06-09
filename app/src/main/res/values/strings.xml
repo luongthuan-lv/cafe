@@ -32,4 +32,10 @@
     <string name="str_new_location">Địa chỉ</string>
     <string name="str_new_birhday">Ngày sinh</string>
     <string name="search_bar_product_hint">Nhập vào tên sản phẩm</string>
+    <string name="btn_update">Sửa</string>
+    <string name="btn_remove">Xóa</string>
+    <string name="title_update_product">Cập nhật thông tin sản phẩm</string>
+    <string name="str_product_name">Tên sản phẩm</string>
+    <string name="str_product_price">Giá bán</string>
+    <string name="str_product_type">Loại sản phẩm</string>
 </resources>

@@ -1,9 +1,12 @@
 package vn.touchspace.example.ui.main.product;
 
+import android.os.Handler;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 import vn.touchspace.example.data.DataManager;
+import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.BasePresenter;
 import vn.touchspace.example.ui.main.info.InfoMvpPresenter;
@@ -37,5 +40,31 @@ public class ProductPresenter<V extends ProductMvpView> extends BasePresenter<V>
                         }
                         handleApiError(throwable);
                     }));
+    }
+
+    @Override
+    public void removeProduct(String id) {
+        getMvpView().showLoading();
+        RemoveRequest request = new RemoveRequest();
+        request.id = id;
+        getCompositeDisposable().add(getDataManager()
+                .removeProduct(request)
+                .subscribeOn(getSchedulerProvider().io())
+                .observeOn(getSchedulerProvider().ui())
+                .subscribe(message -> {
+                    if (!isViewAttached()) {
+                        return;
+                    }
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
+                    getMvpView().removeSuccess(message.getMessage());
+
+                }, throwable -> {
+                    if (!isViewAttached()) {
+                        return;
+                    }
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
+                    handleApiError(throwable);
+                })
+        );
     }
 }

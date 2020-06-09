@@ -44,8 +44,7 @@
 
     <style name="SearchBar">
         <item name="android:drawableLeft">@drawable/ic_seach</item>
-        <item name="android:paddingHorizontal" tools:ignore="NewApi">@dimen/dp16</item>
-        <item name="android:paddingVertical" tools:ignore="NewApi">@dimen/dp12</item>
+        <item name="android:padding">@dimen/dp12</item>
         <item name="android:textColorHint">@color/colorAccent</item>
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">@dimen/sp14</item>

@@ -6,4 +6,6 @@ import vn.touchspace.example.ui.main.info.InfoMvpView;
 
 public interface ProductMvpPresenter<V extends ProductMvpView> extends MvpPresenter<V> {
     void getProducts();
+
+    void removeProduct(String id);
 }
