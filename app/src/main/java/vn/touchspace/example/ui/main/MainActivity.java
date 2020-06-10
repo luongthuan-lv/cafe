@@ -30,6 +30,7 @@ import vn.touchspace.example.ui.main.account.AccountFragment;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
 import vn.touchspace.example.ui.main.product.ProductFragment;
+import vn.touchspace.example.ui.main.product.addproduct.AddProductActivity;
 import vn.touchspace.example.ui.main.statistical.StatisticalFragment;
 import vn.touchspace.example.utils.AppUtils;
 
@@ -101,6 +102,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
                 case R.id.nav_product:
                     icAdd.setVisibility(View.VISIBLE);
                     gotoFragment(ProductFragment.newInstance(), getString(R.string.menu_product));
+                    icAdd.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddProductActivity.class)));
                     break;
                 case R.id.nav_statistical:
                     icAdd.setVisibility(View.GONE);

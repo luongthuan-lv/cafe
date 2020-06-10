@@ -19,9 +19,13 @@
         tools:targetApi="m">
         <activity android:name="vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name="vn.touchspace.example.ui.main.product.addproduct.AddProductActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name="vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
