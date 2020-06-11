@@ -29,7 +29,7 @@ public class Product implements Serializable {
 
     @SerializedName("productExport")
     @Expose
-    public String productExport;
+    public int productExport;
 
     @SerializedName("__v")
     @Expose
@@ -77,11 +77,11 @@ public class Product implements Serializable {
         this.productType = productType;
     }
 
-    public String getProductExport() {
+    public int getProductExport() {
         return productExport;
     }
 
-    public void setProductExport(String productExport) {
+    public void setProductExport(int productExport) {
         this.productExport = productExport;
     }
 }

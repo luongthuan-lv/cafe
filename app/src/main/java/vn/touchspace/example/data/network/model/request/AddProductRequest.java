@@ -17,5 +17,5 @@ public class AddProductRequest {
     @SerializedName("productType")
     public String productType;
     @SerializedName("productExport")
-    public String productExport;
+    public int productExport;
 }

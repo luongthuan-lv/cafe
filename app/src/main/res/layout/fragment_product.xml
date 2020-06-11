@@ -8,6 +8,7 @@
     android:paddingTop="@dimen/dp16"
     android:background="@color/bg_color">
     <EditText
+        android:id="@+id/seach_bar"
         android:layout_marginBottom="@dimen/dp8"
         android:layout_marginHorizontal="@dimen/dp16"
         style="@style/SearchBar"

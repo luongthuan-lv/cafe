@@ -28,7 +28,7 @@ public class AddProductPresenter<V extends AddProductMvpView> extends BasePresen
             request.productPrice = price;
             request.productType = type;
             request.productImage = image;
-            request.productExport = "0";
+            request.productExport = 0;
 
             getMvpView().showLoading();
             getCompositeDisposable().add(getDataManager()
