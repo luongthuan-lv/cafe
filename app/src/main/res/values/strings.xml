@@ -39,4 +39,6 @@
     <string name="str_product_price">Giá bán</string>
     <string name="str_product_type">Loại sản phẩm</string>
     <string name="title_add_product">Thêm sản phẩm</string>
+    <string name="menu_customer">Khách hàng</string>
+    <string name="str_role_account">Tài khoản không đủ quyền sử dụng chức năng này!</string>
 </resources>

@@ -14,6 +14,7 @@ import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.prefs.PreferencesHelper;
 import vn.touchspace.example.data.realm.RealmHelper;
@@ -209,8 +210,18 @@ public class AppDataManager implements DataManager {
     }
 
     @Override
-    public Single<List<Product>> getProducts() {
-        return mApiService.getProducts();
+    public Single<List<Product>> getProducts(String productName) {
+        return mApiService.getProducts(productName);
+    }
+
+    @Override
+    public Single<List<vn.touchspace.example.data.network.model.response.User>> getStaffs(String role) {
+        return mApiService.getStaffs(role);
+    }
+
+    @Override
+    public Single<List<Customer>> getCustomers() {
+        return mApiService.getCustomers();
     }
 
     @Override

@@ -9,6 +9,7 @@ import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.network.model.response.SignIn;
 
@@ -87,8 +88,18 @@ public class AppApiHelper implements ApiService {
     }
 
     @Override
-    public Single<List<Product>> getProducts() {
-        return apiService.getProducts();
+    public Single<List<Product>> getProducts(String productName) {
+        return apiService.getProducts(productName);
+    }
+
+    @Override
+    public Single<List<User>> getStaffs(String role) {
+        return apiService.getStaffs(role);
+    }
+
+    @Override
+    public Single<List<Customer>> getCustomers() {
+        return apiService.getCustomers();
     }
 
     @Override

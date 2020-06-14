@@ -13,4 +13,6 @@ public final class ApiEndPoint {
     static final String ENDPOINT_CREATE_PRODUCT = "add-product";
     static final String ENDPOINT_UPDATE_PRODUCT = "update-product";
     static final String ENDPOINT_REMOVE_PRODUCT = "remove-product";
+    static final String ENDPOINT_GET_CUSTOMERS = "get-customer-list";
+    static final String ENDPOINT_GET_STAFFS = "get-user-list";
 }

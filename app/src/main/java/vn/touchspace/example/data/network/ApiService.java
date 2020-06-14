@@ -8,6 +8,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
@@ -15,6 +16,7 @@ import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.network.model.response.SignIn;
 import vn.touchspace.example.data.network.model.response.User;
@@ -45,7 +47,17 @@ public interface ApiService {
     /* get products */
     @Headers("Content-Type: application/json; charset=utf-8")
     @GET(ENDPOINT_GET_PRODUCTS)
-    Single<List<Product>> getProducts();
+    Single<List<Product>> getProducts(@Query("productName") String productName);
+
+    /* get staffs */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @GET(ENDPOINT_GET_STAFFS)
+    Single<List<User>> getStaffs(@Query("role") String role);
+
+    /* get customers */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @GET(ENDPOINT_GET_CUSTOMERS)
+    Single<List<Customer>> getCustomers();
 
     /* add product */
     @Headers("Content-Type: application/json; charset=utf-8")

@@ -24,9 +24,9 @@ public class ProductPresenter<V extends ProductMvpView> extends BasePresenter<V>
     }
 
     @Override
-    public void getProducts() {
+    public void getProducts(String productName) {
             getCompositeDisposable().add(getDataManager()
-                    .getProducts()
+                    .getProducts(productName)
                     .subscribeOn(getSchedulerProvider().io())
                     .observeOn(getSchedulerProvider().ui())
                     .subscribe(products -> {

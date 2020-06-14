@@ -32,6 +32,7 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
     ProductAdapter adapter;
     @BindView(R.id.seach_bar)
     EditText seachBar;
+    private String productNameTemp = "";
 
     public static ProductFragment newInstance() {
 
@@ -40,13 +41,6 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
         ProductFragment fragment = new ProductFragment();
         fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getActivityComponent().inject(this);
-        mPresenter.onAttach(this);
     }
 
     @Override
@@ -62,7 +56,9 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
 
     @Override
     protected void init(Bundle saveInstanceState, View rootView) {
-        mPresenter.getProducts();
+        getActivityComponent().inject(this);
+        mPresenter.onAttach(this);
+
         seachBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -71,7 +67,8 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                productNameTemp = s.toString().trim();
+                initData(productNameTemp);
             }
 
             @Override
@@ -89,7 +86,11 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getProducts();
+        initData("");
+    }
+
+    private void initData(String productName) {
+        mPresenter.getProducts(productName);
     }
 
     @Override
@@ -107,6 +108,6 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
     @Override
     public void removeSuccess(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-        mPresenter.getProducts();
+        initData(productNameTemp);
     }
 }

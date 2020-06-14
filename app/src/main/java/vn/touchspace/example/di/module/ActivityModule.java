@@ -30,6 +30,18 @@ import vn.touchspace.example.ui.login.LoginPresenter;
 import vn.touchspace.example.ui.main.MainMvpPresenter;
 import vn.touchspace.example.ui.main.MainMvpView;
 import vn.touchspace.example.ui.main.MainPresenter;
+import vn.touchspace.example.ui.main.account.AccountMvpPresenter;
+import vn.touchspace.example.ui.main.account.AccountMvpView;
+import vn.touchspace.example.ui.main.account.AccountPresenter;
+import vn.touchspace.example.ui.main.customer.CustomerMvpPresenter;
+import vn.touchspace.example.ui.main.customer.CustomerMvpView;
+import vn.touchspace.example.ui.main.customer.CustomerPresenter;
+import vn.touchspace.example.ui.main.account.manager.ManagerMvpPresenter;
+import vn.touchspace.example.ui.main.account.manager.ManagerMvpView;
+import vn.touchspace.example.ui.main.account.manager.ManagerPresenter;
+import vn.touchspace.example.ui.main.account.staff.StaffMvpPresenter;
+import vn.touchspace.example.ui.main.account.staff.StaffMvpView;
+import vn.touchspace.example.ui.main.account.staff.StaffPresenter;
 import vn.touchspace.example.ui.main.info.InfoMvpPresenter;
 import vn.touchspace.example.ui.main.info.InfoMvpView;
 import vn.touchspace.example.ui.main.info.InfoPresenter;
@@ -117,6 +129,34 @@ public class ActivityModule {
     @PerActivity
     InfoMvpPresenter<InfoMvpView> provideInfoPresenter(
             InfoPresenter<InfoMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    AccountMvpPresenter<AccountMvpView> provideAccountPresenter(
+            AccountPresenter<AccountMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    StaffMvpPresenter<StaffMvpView> provideStaffPresenter(
+            StaffPresenter<StaffMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    ManagerMvpPresenter<ManagerMvpView> provideManagerPresenter(
+            ManagerPresenter<ManagerMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    CustomerMvpPresenter<CustomerMvpView> provideCustomerPresenter(
+            CustomerPresenter<CustomerMvpView> presenter) {
         return presenter;
     }
 

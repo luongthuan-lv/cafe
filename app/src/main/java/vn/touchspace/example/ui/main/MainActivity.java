@@ -27,6 +27,7 @@ import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.BaseActivity;
 import vn.touchspace.example.ui.login.LoginActivity;
 import vn.touchspace.example.ui.main.account.AccountFragment;
+import vn.touchspace.example.ui.main.customer.CustomerFragment;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
 import vn.touchspace.example.ui.main.product.ProductFragment;
@@ -59,6 +60,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
     private long backPressedTime;
     private InvoiceFragment invoiceFragment = InvoiceFragment.newInstance();
+    private String role = "";
 
 
     @Override
@@ -95,8 +97,16 @@ public class MainActivity extends BaseActivity implements MainMvpView {
                     icAdd.setVisibility(View.VISIBLE);
                     gotoFragment(invoiceFragment, getString(R.string.menu_invoice));
                     break;
-                case R.id.nav_account:
+                case R.id.nav_customer:
                     icAdd.setVisibility(View.VISIBLE);
+                    gotoFragment(CustomerFragment.newInstance(), getString(R.string.menu_customer));
+                    break;
+                case R.id.nav_account:
+                    if(role.equals("staff")){
+                        icAdd.setVisibility(View.GONE);
+                    }else{
+                        icAdd.setVisibility(View.VISIBLE);
+                    }
                     gotoFragment(AccountFragment.newInstance(), getString(R.string.menu_account));
                     break;
                 case R.id.nav_product:
@@ -166,29 +176,15 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     @Override
     public void getUserInfoSuccess(User user) {
         tvName.setText(user.getFullName());
-        setDefaultAvatar(user.getFullName());
+        AppUtils.setDefaultAvatar(tvAvatar, user.getFullName());
         tvRole.setText(AppUtils.getRole(user.getRole()));
+        role = user.getRole();
     }
 
     @Override
     protected void onDestroy() {
         mMainPresenter.onDetach();
         super.onDestroy();
-    }
-
-    private void setDefaultAvatar(String username) {
-        //set avatar bằng các chữ cái đầu
-        String nameSet = "";
-        String[] name = username.split(" ");
-        for (int i = 0; i < name.length; i++) {
-            String s = name[i];
-            nameSet = nameSet + s.charAt(0);
-        }
-        if (nameSet.length() > 1) {
-            nameSet = nameSet.substring(nameSet.length() - 2);
-        }
-        tvAvatar.setText(nameSet);
-        tvAvatar.setVisibility(View.VISIBLE);
     }
 
     private void hideKeyBoard() {

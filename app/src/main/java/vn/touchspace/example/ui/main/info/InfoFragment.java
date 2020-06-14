@@ -57,21 +57,15 @@ public class InfoFragment extends BaseFragment implements InfoMvpView {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        getActivityComponent().inject(this);
-
-        mPresenter.onAttach(this);
-
-    }
-
-    @Override
     protected int getLayoutResource() {
         return R.layout.fragment_info;
     }
 
     @Override
     protected void init(Bundle saveInstanceState, View rootView) {
+        getActivityComponent().inject(this);
+        mPresenter.onAttach(this);
+
         mPresenter.getInfo();
     }
 
@@ -112,24 +106,10 @@ public class InfoFragment extends BaseFragment implements InfoMvpView {
     public void getInfoSuccess(User user) {
         this.user = user;
         tvName.setText(user.getFullName());
-        setDefaultAvatar(user.getFullName());
+        AppUtils.setDefaultAvatar(tvAvatar, user.getFullName());
         tvRole.setText(AppUtils.getRole(user.getRole()));
         tvBirthday.setText(user.getBirthday());
         tvTelephone.setText(user.getTelephoneNumber());
     }
 
-    private void setDefaultAvatar(String username) {
-        //set avatar bằng các chữ cái đầu
-        String nameSet = "";
-        String[] name = username.split(" ");
-        for (int i = 0; i < name.length; i++) {
-            String s = name[i];
-            nameSet = nameSet + s.charAt(0);
-        }
-        if (nameSet.length() > 1) {
-            nameSet = nameSet.substring(nameSet.length() - 2);
-        }
-        tvAvatar.setText(nameSet);
-        tvAvatar.setVisibility(View.VISIBLE);
-    }
 }

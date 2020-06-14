@@ -36,19 +36,32 @@ public class AppUtils {
 
     public static String getRole(String role){
         if(role.equals("director")){
-            return "giám đốc";
+            return "Giám đốc";
         }else if (role.equals("manager")){
-            return "quản lý";
-        }else if (role.equals("waiter")){
-            return "nhân viên chạy bàn";
-        }else{
-            return "nhân viên pha chế";
+            return "Quản lý";
+        }else {
+            return "Nhân viên";
         }
     }
 
     public static void isDoubleClick(View view) {
         view.setEnabled(false);
         new Handler().postDelayed(() -> view.setEnabled(true), 500);
+    }
+
+    public static void setDefaultAvatar(TextView view, String username) {
+        //set avatar bằng các chữ cái đầu
+        String nameSet = "";
+        String[] name = username.split(" ");
+        for (int i = 0; i < name.length; i++) {
+            String s = name[i];
+            nameSet = nameSet + s.charAt(0);
+        }
+        if (nameSet.length() > 1) {
+            nameSet = nameSet.substring(nameSet.length() - 2);
+        }
+        view.setText(nameSet);
+        view.setVisibility(View.VISIBLE);
     }
 
     private static String correctNumber(String number) {
