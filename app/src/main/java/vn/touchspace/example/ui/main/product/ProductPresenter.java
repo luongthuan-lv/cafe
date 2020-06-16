@@ -55,14 +55,14 @@ public class ProductPresenter<V extends ProductMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
-                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
+                    getMvpView().hideLoading();
                     getMvpView().removeSuccess(message.getMessage());
 
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
+                    getMvpView().hideLoading();
                     handleApiError(throwable);
                 })
         );

@@ -27,6 +27,7 @@ import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.BaseActivity;
 import vn.touchspace.example.ui.login.LoginActivity;
 import vn.touchspace.example.ui.main.account.AccountFragment;
+import vn.touchspace.example.ui.main.account.addstaff.AddStaffActivity;
 import vn.touchspace.example.ui.main.customer.CustomerFragment;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
@@ -108,6 +109,11 @@ public class MainActivity extends BaseActivity implements MainMvpView {
                         icAdd.setVisibility(View.VISIBLE);
                     }
                     gotoFragment(AccountFragment.newInstance(), getString(R.string.menu_account));
+                    icAdd.setOnClickListener(v -> {
+                        Intent intent = new Intent(MainActivity.this, AddStaffActivity.class);
+                        intent.putExtra("role", role);
+                        startActivity(intent);
+                    });
                     break;
                 case R.id.nav_product:
                     icAdd.setVisibility(View.VISIBLE);

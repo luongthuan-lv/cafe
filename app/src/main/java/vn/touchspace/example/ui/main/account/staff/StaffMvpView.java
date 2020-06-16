@@ -11,4 +11,6 @@ import vn.touchspace.example.ui.base.MvpView;
 
 public interface StaffMvpView extends MvpView {
     void getStaffSuccess(List<User> list);
+
+    void removeSuccess(String message);
 }

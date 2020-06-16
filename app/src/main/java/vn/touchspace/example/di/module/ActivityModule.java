@@ -33,6 +33,9 @@ import vn.touchspace.example.ui.main.MainPresenter;
 import vn.touchspace.example.ui.main.account.AccountMvpPresenter;
 import vn.touchspace.example.ui.main.account.AccountMvpView;
 import vn.touchspace.example.ui.main.account.AccountPresenter;
+import vn.touchspace.example.ui.main.account.addstaff.AddStaffMvpPresenter;
+import vn.touchspace.example.ui.main.account.addstaff.AddStaffMvpView;
+import vn.touchspace.example.ui.main.account.addstaff.AddStaffPresenter;
 import vn.touchspace.example.ui.main.customer.CustomerMvpPresenter;
 import vn.touchspace.example.ui.main.customer.CustomerMvpView;
 import vn.touchspace.example.ui.main.customer.CustomerPresenter;
@@ -194,6 +197,14 @@ public class ActivityModule {
             AddProductPresenter<AddProductMvpView> presenter) {
         return presenter;
     }
+
+    @Provides
+    @PerActivity
+    AddStaffMvpPresenter<AddStaffMvpView> provideAddStaffPresenter(
+            AddStaffPresenter<AddStaffMvpView> presenter) {
+        return presenter;
+    }
+
 
 
     @Provides

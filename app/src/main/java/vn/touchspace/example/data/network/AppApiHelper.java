@@ -4,6 +4,7 @@ import com.touchspace.example.BuildConfig;
 
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
+import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
@@ -95,6 +96,16 @@ public class AppApiHelper implements ApiService {
     @Override
     public Single<List<User>> getStaffs(String role) {
         return apiService.getStaffs(role);
+    }
+
+    @Override
+    public Single<Message> removeStaff(RemoveRequest request) {
+        return apiService.removeStaff(request);
+    }
+
+    @Override
+    public Single<Message> createStaff(AddStaffRequest request) {
+        return apiService.createStaff(request);
     }
 
     @Override

@@ -11,6 +11,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
+import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
@@ -53,6 +54,16 @@ public interface ApiService {
     @Headers("Content-Type: application/json; charset=utf-8")
     @GET(ENDPOINT_GET_STAFFS)
     Single<List<User>> getStaffs(@Query("role") String role);
+
+    /* remove staff */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_REMOVE_STAFF)
+    Single<Message> removeStaff(@Body RemoveRequest request);
+
+    /* add staff */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_CREATE_STAFF)
+    Single<Message> createStaff(@Body AddStaffRequest request);
 
     /* get customers */
     @Headers("Content-Type: application/json; charset=utf-8")

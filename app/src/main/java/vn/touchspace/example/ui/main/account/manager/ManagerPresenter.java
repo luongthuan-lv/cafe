@@ -1,9 +1,12 @@
 package vn.touchspace.example.ui.main.account.manager;
 
+import android.os.Handler;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 import vn.touchspace.example.data.DataManager;
+import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.ui.base.BasePresenter;
 import vn.touchspace.example.ui.main.account.staff.StaffMvpPresenter;
 import vn.touchspace.example.ui.main.account.staff.StaffMvpView;
@@ -28,6 +31,7 @@ public class ManagerPresenter<V extends ManagerMvpView> extends BasePresenter<V>
 
     @Override
     public void getManager() {
+        getMvpView().showLoading();
         getCompositeDisposable().add(getDataManager()
                 .getStaffs("manager")
                 .subscribeOn(getSchedulerProvider().io())
@@ -36,11 +40,37 @@ public class ManagerPresenter<V extends ManagerMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
+                    getMvpView().hideLoading();
                     getMvpView().getManagerSuccess(list);
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
+                    getMvpView().hideLoading();
+                    handleApiError(throwable);
+                }));
+    }
+
+    @Override
+    public void deleteManager(String id) {
+        getMvpView().showLoading();
+        RemoveRequest request = new RemoveRequest();
+        request.id = id;
+        getCompositeDisposable().add(getDataManager()
+                .removeStaff(request)
+                .subscribeOn(getSchedulerProvider().io())
+                .observeOn(getSchedulerProvider().ui())
+                .subscribe(message -> {
+                    if (!isViewAttached()) {
+                        return;
+                    }
+                    getMvpView().hideLoading();
+                    getMvpView().removeSuccess(message.getMessage());
+                }, throwable -> {
+                    if (!isViewAttached()) {
+                        return;
+                    }
+                    getMvpView().hideLoading();
                     handleApiError(throwable);
                 }));
     }

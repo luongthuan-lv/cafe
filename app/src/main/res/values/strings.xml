@@ -41,4 +41,8 @@
     <string name="title_add_product">Thêm sản phẩm</string>
     <string name="menu_customer">Khách hàng</string>
     <string name="str_role_account">Tài khoản không đủ quyền sử dụng chức năng này!</string>
+    <string name="str_add_username">Tên tài khoản</string>
+    <string name="title_add_staff">Thêm nhân viên</string>
+    <string name="rd_staff">Nhân viên</string>
+    <string name="rd_manager">Quản lý</string>
 </resources>

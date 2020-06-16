@@ -10,4 +10,5 @@ import vn.touchspace.example.ui.main.account.staff.StaffMvpView;
 public interface ManagerMvpPresenter<V extends ManagerMvpView> extends MvpPresenter<V> {
     void getManager();
 
+    void deleteManager(String id);
 }

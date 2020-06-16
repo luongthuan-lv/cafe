@@ -20,6 +20,9 @@
         <activity android:name="vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name="vn.touchspace.example.ui.main.account.addstaff.AddStaffActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name="vn.touchspace.example.ui.main.product.addproduct.AddProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

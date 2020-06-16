@@ -9,6 +9,7 @@ import io.reactivex.Observable;
 import vn.touchspace.example.data.network.ApiService;
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
+import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
@@ -217,6 +218,16 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<List<vn.touchspace.example.data.network.model.response.User>> getStaffs(String role) {
         return mApiService.getStaffs(role);
+    }
+
+    @Override
+    public Single<Message> removeStaff(RemoveRequest request) {
+        return mApiService.removeStaff(request);
+    }
+
+    @Override
+    public Single<Message> createStaff(AddStaffRequest request) {
+        return mApiService.createStaff(request);
     }
 
     @Override
