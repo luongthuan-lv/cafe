@@ -8,10 +8,12 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import vn.touchspace.example.data.network.ApiService;
 import vn.touchspace.example.data.network.model.Message;
+import vn.touchspace.example.data.network.model.request.AddCustomerRequest;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
+import vn.touchspace.example.data.network.model.request.UpdateCustomerRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
@@ -233,6 +235,21 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<List<Customer>> getCustomers() {
         return mApiService.getCustomers();
+    }
+
+    @Override
+    public Single<Message> createCustomer(AddCustomerRequest request) {
+        return mApiService.createCustomer(request);
+    }
+
+    @Override
+    public Single<Message> updateCustomer(UpdateCustomerRequest request) {
+        return mApiService.updateCustomer(request);
+    }
+
+    @Override
+    public Single<Message> removeCustomer(RemoveRequest request) {
+        return mApiService.removeCustomer(request);
     }
 
     @Override

@@ -7,5 +7,6 @@ import vn.touchspace.example.ui.base.MvpPresenter;
  */
 
 public interface CustomerMvpPresenter<V extends CustomerMvpView> extends MvpPresenter<V> {
-
+    void getCustomers();
+    void removeCustomer(String id);
 }

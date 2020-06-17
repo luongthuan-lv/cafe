@@ -3,10 +3,12 @@ package vn.touchspace.example.data.network;
 import com.touchspace.example.BuildConfig;
 
 import vn.touchspace.example.data.network.model.Message;
+import vn.touchspace.example.data.network.model.request.AddCustomerRequest;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
+import vn.touchspace.example.data.network.model.request.UpdateCustomerRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
@@ -126,5 +128,20 @@ public class AppApiHelper implements ApiService {
     @Override
     public Single<Message> removeProduct(RemoveRequest request) {
         return apiService.removeProduct(request);
+    }
+
+    @Override
+    public Single<Message> createCustomer(AddCustomerRequest request) {
+        return apiService.createCustomer(request);
+    }
+
+    @Override
+    public Single<Message> updateCustomer(UpdateCustomerRequest request) {
+        return apiService.updateCustomer(request);
+    }
+
+    @Override
+    public Single<Message> removeCustomer(RemoveRequest request) {
+        return apiService.removeCustomer(request);
     }
 }

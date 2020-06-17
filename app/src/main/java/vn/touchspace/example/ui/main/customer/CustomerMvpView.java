@@ -1,5 +1,8 @@
 package vn.touchspace.example.ui.main.customer;
 
+import java.util.List;
+
+import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.ui.base.MvpView;
 
 /**
@@ -7,5 +10,6 @@ import vn.touchspace.example.ui.base.MvpView;
  */
 
 public interface CustomerMvpView extends MvpView {
-
+        void getListSuccess(List<Customer> list);
+        void removeSuccess(String message);
 }

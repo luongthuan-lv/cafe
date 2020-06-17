@@ -10,10 +10,12 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 import vn.touchspace.example.data.network.model.Message;
+import vn.touchspace.example.data.network.model.request.AddCustomerRequest;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
 import vn.touchspace.example.data.network.model.request.SignInRequest;
+import vn.touchspace.example.data.network.model.request.UpdateCustomerRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
@@ -69,6 +71,21 @@ public interface ApiService {
     @Headers("Content-Type: application/json; charset=utf-8")
     @GET(ENDPOINT_GET_CUSTOMERS)
     Single<List<Customer>> getCustomers();
+
+    /* create customer */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_CREATE_CUSTOMER)
+    Single<Message> createCustomer(@Body AddCustomerRequest request);
+
+    /* update customer */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_UPDATE_CUSTOMER)
+    Single<Message> updateCustomer(@Body UpdateCustomerRequest request);
+
+    /* remove customer */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_REMOVE_CUSTOMER)
+    Single<Message> removeCustomer(@Body RemoveRequest request);
 
     /* add product */
     @Headers("Content-Type: application/json; charset=utf-8")
