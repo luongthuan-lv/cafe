@@ -37,6 +37,7 @@
             android:layout_height="@dimen/dp1" />
 
         <EditText
+            android:inputType="number"
             android:background="@null"
             android:hint="@string/str_add_customer_tel"
             android:gravity="bottom"

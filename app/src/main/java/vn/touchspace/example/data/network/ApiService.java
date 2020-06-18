@@ -20,6 +20,7 @@ import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
 import vn.touchspace.example.data.network.model.response.Customer;
+import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.network.model.response.SignIn;
 import vn.touchspace.example.data.network.model.response.User;
@@ -101,5 +102,10 @@ public interface ApiService {
     @Headers("Content-Type: application/json; charset=utf-8")
     @POST(ENDPOINT_REMOVE_PRODUCT)
     Single<Message> removeProduct(@Body RemoveRequest request);
+
+    /* get invoices */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @GET(ENDPOINT_GET_PRODUCTS)
+    Single<List<Invoice>> getInvoices(@Query("state") String state);
 
 }

@@ -46,7 +46,6 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
     private Calendar date;
     @SuppressLint("SimpleDateFormat")
 
-    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,8 +112,6 @@ public class UpdateInfoActivity extends BaseActivity implements UpdateInfoMvpVie
 
     @Override
     public void getInfoSuccess(User user) {
-        this.user = user;
-
         edtNewName.setText(user.getFullName());
         edtNewBirthday.setText(user.getBirthday());
         edtNewPhone.setText(user.getTelephoneNumber());

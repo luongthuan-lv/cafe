@@ -18,6 +18,7 @@ import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
 import vn.touchspace.example.data.network.model.response.Customer;
+import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.prefs.PreferencesHelper;
 import vn.touchspace.example.data.realm.RealmHelper;
@@ -265,5 +266,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<Message> removeProduct(RemoveRequest request) {
         return mApiService.removeProduct(request);
+    }
+
+    @Override
+    public Single<List<Invoice>> getInvoices(String state) {
+        return mApiService.getInvoices(state);
     }
 }
