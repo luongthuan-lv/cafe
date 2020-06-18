@@ -36,7 +36,7 @@ public class AddStaffActivity extends BaseActivity implements AddStaffMvpView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_product);
+        setContentView(R.layout.activity_add_staff);
         ButterKnife.bind(this);
 
         getActivityComponent().inject(this);

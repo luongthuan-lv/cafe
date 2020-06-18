@@ -25,6 +25,7 @@ import vn.touchspace.example.ui.main.account.addstaff.AddStaffActivity;
 import vn.touchspace.example.ui.main.customer.CustomerFragment;
 import vn.touchspace.example.ui.main.account.manager.ManagerFragment;
 import vn.touchspace.example.ui.main.account.staff.StaffFragment;
+import vn.touchspace.example.ui.main.customer.addcustomer.AddCustomerActivity;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoActivity;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordActivity;
@@ -63,6 +64,8 @@ public interface ActivityComponent {
 
     void inject(AddStaffActivity activity);
 
+    void inject(AddCustomerActivity activity);
+
     void inject(StatisticalFragment fragment);
 
     void inject(AccountFragment fragment);
@@ -76,5 +79,7 @@ public interface ActivityComponent {
     void inject(ManagerFragment fragment);
 
     void inject(CustomerFragment fragment);
+
+
 
 }

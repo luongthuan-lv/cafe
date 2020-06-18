@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/dp16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <EditText
+            android:background="@null"
+            android:hint="@string/str_add_username"
+            android:gravity="bottom"
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp16"
+            android:textColor="@color/colorPrimary"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <RadioGroup
+            android:layout_marginTop="@dimen/dp16"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlSymmetry">
+            <RadioButton
+                android:button="@drawable/radio_button_selector"
+                android:paddingLeft="@dimen/dp8"
+                android:text="@string/rd_staff"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp14"
+                android:id="@+id/rd_staff"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp8"/>
+
+            <RadioButton
+                android:button="@drawable/radio_button_selector"
+                android:paddingLeft="@dimen/dp8"
+                android:text="@string/rd_manager"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp14"
+                android:id="@+id/rd_manager"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/dp8" />
+        </RadioGroup>
+
+        <Button
+            android:layout_marginTop="@dimen/dp16"
+            android:id="@+id/btn_save"
+            style="@style/ButtonSmall"
+            android:text="@string/btn_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+    </LinearLayout>
+
+</LinearLayout>

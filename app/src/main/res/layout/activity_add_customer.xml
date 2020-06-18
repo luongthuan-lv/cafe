@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity">
 
     <include layout="@layout/toolbar"/>
 
@@ -15,19 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_marginTop="@dimen/dp16"
-            android:layout_marginBottom="@dimen/dp8"
-            android:id="@+id/img_product"
-            android:layout_gravity="center_horizontal"
-            android:src="@drawable/img_gallery"
-            android:layout_width="@dimen/dp120"
-            android:layout_height="@dimen/dp120"
-            tools:ignore="ContentDescription" />
 
         <EditText
             android:background="@null"
-            android:hint="@string/str_product_name"
+            android:hint="@string/str_add_customer_name"
             android:gravity="bottom"
             android:id="@+id/edt_name"
             android:layout_width="match_parent"
@@ -45,11 +37,10 @@
             android:layout_height="@dimen/dp1" />
 
         <EditText
-            android:inputType="number"
             android:background="@null"
-            android:hint="@string/str_product_price"
+            android:hint="@string/str_add_customer_tel"
             android:gravity="bottom"
-            android:id="@+id/edt_price"
+            android:id="@+id/edt_tel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp16"
@@ -63,26 +54,6 @@
             android:background="@color/line"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp1" />
-
-        <EditText
-            android:background="@null"
-            android:hint="@string/str_product_type"
-            android:gravity="bottom"
-            android:id="@+id/edt_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp16"
-            android:textColor="@color/colorPrimary"
-            android:drawablePadding="@dimen/dp16"
-            android:textSize="@dimen/sp16"
-            tools:ignore="TextViewEdits" />
-
-        <View
-            android:layout_marginTop="@dimen/dp8"
-            android:background="@color/line"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp1" />
-
         <Button
             android:layout_marginTop="@dimen/dp16"
             android:id="@+id/btn_save"

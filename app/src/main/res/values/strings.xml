@@ -45,4 +45,7 @@
     <string name="title_add_staff">Thêm nhân viên</string>
     <string name="rd_staff">Nhân viên</string>
     <string name="rd_manager">Quản lý</string>
+    <string name="str_add_customer_name">Tên khách hàng</string>
+    <string name="str_add_customer_tel">Số điện thoại</string>
+    <string name="title_add_customer">Thêm khách hàng</string>
 </resources>
