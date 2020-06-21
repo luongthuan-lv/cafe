@@ -57,6 +57,15 @@ import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoPresenter;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpPresenter;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpView;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordPresenter;
+import vn.touchspace.example.ui.main.invoice.InvoiceActiveMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.InvoiceActiveMvpView;
+import vn.touchspace.example.ui.main.invoice.InvoiceActivePresenter;
+import vn.touchspace.example.ui.main.invoice.InvoiceCancelMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.InvoiceCancelMvpView;
+import vn.touchspace.example.ui.main.invoice.InvoiceCancelPresenter;
+import vn.touchspace.example.ui.main.invoice.InvoiceMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.InvoiceMvpView;
+import vn.touchspace.example.ui.main.invoice.InvoicePresenter;
 import vn.touchspace.example.ui.main.product.ProductMvpPresenter;
 import vn.touchspace.example.ui.main.product.ProductMvpView;
 import vn.touchspace.example.ui.main.product.ProductPresenter;
@@ -193,6 +202,27 @@ public class ActivityModule {
             ProductPresenter<ProductMvpView> presenter) {
         return presenter;
     }
+
+    @Provides
+    @PerActivity
+    InvoiceMvpPresenter<InvoiceMvpView> provideInvoicePresenter(
+            InvoicePresenter<InvoiceMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    InvoiceActiveMvpPresenter<InvoiceActiveMvpView> provideInvoiceActivePresenter(
+            InvoiceActivePresenter<InvoiceActiveMvpView> presenter) {
+        return presenter;
+    }
+    @Provides
+    @PerActivity
+    InvoiceCancelMvpPresenter<InvoiceCancelMvpView> provideInvoiceCancelPresenter(
+            InvoiceCancelPresenter<InvoiceCancelMvpView> presenter) {
+        return presenter;
+    }
+
 
     @Provides
     @PerActivity

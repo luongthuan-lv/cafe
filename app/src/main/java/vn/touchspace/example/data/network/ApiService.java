@@ -105,7 +105,7 @@ public interface ApiService {
 
     /* get invoices */
     @Headers("Content-Type: application/json; charset=utf-8")
-    @GET(ENDPOINT_GET_PRODUCTS)
+    @GET(ENDPOINT_GET_INVOICES)
     Single<List<Invoice>> getInvoices(@Query("state") String state);
 
 }

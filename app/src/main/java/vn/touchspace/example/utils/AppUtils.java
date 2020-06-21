@@ -27,6 +27,11 @@ public class AppUtils {
         }
     }
 
+    public static String formatNumber(double number) {
+        DecimalFormat formatter = new DecimalFormat("###,###.###");
+            return formatter.format(number);
+    }
+
     public static String convertTime(long time) {
 
         @SuppressLint("SimpleDateFormat") SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");

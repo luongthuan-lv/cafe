@@ -15,7 +15,7 @@ public class Customer {
     private String customerPhone;
     @SerializedName("customerInvoiceSum")
     @Expose
-    private String customerInvoiceSum;
+    private double customerInvoiceSum;
 
     public String getId() {
         return id;
@@ -41,11 +41,11 @@ public class Customer {
         this.customerPhone = customerPhone;
     }
 
-    public String getCustomerInvoiceSum() {
+    public double getCustomerInvoiceSum() {
         return customerInvoiceSum;
     }
 
-    public void setCustomerInvoiceSum(String customerInvoiceSum) {
+    public void setCustomerInvoiceSum(double customerInvoiceSum) {
         this.customerInvoiceSum = customerInvoiceSum;
     }
 }

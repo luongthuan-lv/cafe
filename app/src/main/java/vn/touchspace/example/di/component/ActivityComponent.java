@@ -29,7 +29,10 @@ import vn.touchspace.example.ui.main.customer.addcustomer.AddCustomerActivity;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoActivity;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordActivity;
+import vn.touchspace.example.ui.main.invoice.InvoiceActiveFragment;
+import vn.touchspace.example.ui.main.invoice.InvoiceCancelFragment;
 import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
+import vn.touchspace.example.ui.main.invoice.InvoicesFragment;
 import vn.touchspace.example.ui.main.product.ProductFragment;
 import vn.touchspace.example.ui.main.product.addproduct.AddProductActivity;
 import vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity;
@@ -70,7 +73,13 @@ public interface ActivityComponent {
 
     void inject(AccountFragment fragment);
 
+    void inject(InvoicesFragment fragment);
+
     void inject(InvoiceFragment fragment);
+
+    void inject(InvoiceActiveFragment fragment);
+
+    void inject(InvoiceCancelFragment fragment);
 
     void inject(ProductFragment fragment);
 

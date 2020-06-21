@@ -48,4 +48,7 @@
     <string name="str_add_customer_name">Tên khách hàng</string>
     <string name="str_add_customer_tel">Số điện thoại</string>
     <string name="title_add_customer">Thêm khách hàng</string>
+    <string name="str_state_cancel">Trạng thái: Hủy</string>
+    <string name="str_state_active">Trạng thái: Đã thanh toán</string>
+    <string name="str_state_finish">Trạng thái: Hoàn thành</string>
 </resources>

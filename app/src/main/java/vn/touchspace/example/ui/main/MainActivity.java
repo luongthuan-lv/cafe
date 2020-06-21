@@ -32,6 +32,7 @@ import vn.touchspace.example.ui.main.customer.CustomerFragment;
 import vn.touchspace.example.ui.main.customer.addcustomer.AddCustomerActivity;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.invoice.InvoiceFragment;
+import vn.touchspace.example.ui.main.invoice.InvoicesFragment;
 import vn.touchspace.example.ui.main.product.ProductFragment;
 import vn.touchspace.example.ui.main.product.addproduct.AddProductActivity;
 import vn.touchspace.example.ui.main.statistical.StatisticalFragment;
@@ -61,7 +62,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     ImageView icAdd;
 
     private long backPressedTime;
-    private InvoiceFragment invoiceFragment = InvoiceFragment.newInstance();
+    private InvoicesFragment invoiceFragment = InvoicesFragment.newInstance();
     private String role = "";
 
 

@@ -68,9 +68,9 @@ public class CustomerAdapter extends BaseRecyclerAdapter<Customer, CustomerAdapt
 
         void fillData(Customer customer) {
             AppUtils.setDefaultAvatar(tvAvatar, customer.getCustomerName());
-            tvName.setText(customer.getCustomerName());
-            tvTelephone.setText(customer.getCustomerPhone());
-            tvInvoiceSum.setText(String.format("%s VNĐ", AppUtils.formatNumber(customer.getCustomerInvoiceSum())));
+            tvName.setText(String.format("Tên khách hàng: %s", customer.getCustomerName()));
+            tvTelephone.setText(String.format("Số điện thoại: %s", customer.getCustomerPhone()));
+            tvInvoiceSum.setText(String.format("Tổng hóa đơn: %s VNĐ", AppUtils.formatNumber(customer.getCustomerInvoiceSum())));
         }
     }
 

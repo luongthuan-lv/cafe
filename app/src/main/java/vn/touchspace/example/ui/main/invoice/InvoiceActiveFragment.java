@@ -15,24 +15,22 @@ import butterknife.BindView;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.ui.adapter.InvoiceAdapter;
 import vn.touchspace.example.ui.base.BaseFragment;
-import vn.touchspace.example.ui.main.info.InfoMvpPresenter;
-import vn.touchspace.example.ui.main.info.InfoMvpView;
 import vn.touchspace.example.utils.recycler.SetupRvUtils;
 
-public class InvoiceFragment extends BaseFragment implements InvoiceMvpView{
+public class InvoiceActiveFragment extends BaseFragment implements InvoiceActiveMvpView{
 
     @BindView(R.id.rcy_view)
     RecyclerView rcyView;
     @Inject
-    InvoiceMvpPresenter<InvoiceMvpView> mPresenter;
+    InvoiceActiveMvpPresenter<InvoiceActiveMvpView> mPresenter;
     private InvoiceAdapter adapter;
 
 
-    public static InvoiceFragment newInstance() {
+    public static InvoiceActiveFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        InvoiceFragment fragment = new InvoiceFragment();
+        InvoiceActiveFragment fragment = new InvoiceActiveFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,7 +50,7 @@ public class InvoiceFragment extends BaseFragment implements InvoiceMvpView{
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getInvoices("finish");
+        mPresenter.getInvoices("active");
     }
 
     @Override
