@@ -41,13 +41,13 @@ public class StaffPresenter<V extends StaffMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().getStaffSuccess(list);
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 }));
     }
@@ -65,13 +65,13 @@ public class StaffPresenter<V extends StaffMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().removeSuccess(message.getMessage());
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 }));
     }

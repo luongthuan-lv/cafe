@@ -40,13 +40,13 @@ public class ManagerPresenter<V extends ManagerMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().getManagerSuccess(list);
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 }));
     }
@@ -64,13 +64,13 @@ public class ManagerPresenter<V extends ManagerMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().removeSuccess(message.getMessage());
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 }));
     }

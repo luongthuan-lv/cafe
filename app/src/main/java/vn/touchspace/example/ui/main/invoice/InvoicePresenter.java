@@ -1,5 +1,7 @@
 package vn.touchspace.example.ui.main.invoice;
 
+import android.os.Handler;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -32,13 +34,13 @@ public class InvoicePresenter<V extends InvoiceMvpView> extends BasePresenter<V>
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().getInvoicesSuccess(list);
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 }));
     }

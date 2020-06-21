@@ -3,6 +3,7 @@ package vn.touchspace.example.ui.main.product;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.touchspace.example.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -29,10 +31,10 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
     ProductMvpPresenter<ProductMvpView> mPresenter;
     @BindView(R.id.rcy_view)
     RecyclerView rcyView;
-    ProductAdapter adapter;
+
     @BindView(R.id.seach_bar)
     EditText seachBar;
-    private String productNameTemp = "";
+    private ProductAdapter adapter;
 
     public static ProductFragment newInstance() {
 
@@ -41,12 +43,6 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
         ProductFragment fragment = new ProductFragment();
         fragment.setArguments(args);
         return fragment;
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mPresenter.onDetach();
     }
 
     @Override
@@ -59,6 +55,7 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
         getActivityComponent().inject(this);
         mPresenter.onAttach(this);
 
+
         seachBar.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -67,8 +64,7 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                productNameTemp = s.toString().trim();
-                initData(productNameTemp);
+                mPresenter.getProducts(s.toString().trim());
             }
 
             @Override
@@ -76,6 +72,7 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
 
             }
         });
+
     }
 
     @Override
@@ -86,11 +83,7 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
     @Override
     public void onResume() {
         super.onResume();
-        initData("");
-    }
-
-    private void initData(String productName) {
-        mPresenter.getProducts(productName);
+        mPresenter.getProducts("");
     }
 
     @Override
@@ -108,6 +101,6 @@ public class ProductFragment extends BaseFragment implements ProductMvpView {
     @Override
     public void removeSuccess(String message) {
         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-        initData(productNameTemp);
+        mPresenter.getProducts("");
     }
 }

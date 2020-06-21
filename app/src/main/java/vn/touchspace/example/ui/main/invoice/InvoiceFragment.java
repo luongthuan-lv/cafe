@@ -56,12 +56,6 @@ public class InvoiceFragment extends BaseFragment implements InvoiceMvpView{
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        mPresenter.onDetach();
-    }
-
-    @Override
     protected void setUp(View view) {
 
     }

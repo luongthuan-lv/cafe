@@ -40,13 +40,13 @@ public class AddStaffPresenter<V extends AddStaffMvpView> extends BasePresenter<
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().addSuccess(message.getMessage());
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                   getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 })
         );

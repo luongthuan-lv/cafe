@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_centerVertical="true"
     android:layout_margin="@dimen/dp6"
-    android:orientation="vertical"
     android:background="@drawable/bg_product"
     android:padding="@dimen/dp12">
 
-    <TextView
-        android:id="@+id/tv_name"
+    <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/img_state"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp14" />
+        tools:ignore="UselessParent"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@id/img_state">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
 
-    <TextView
-        android:id="@+id/tv_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp14" />
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
 
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp14" />
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
 
-    <TextView
-        android:id="@+id/tv_state"
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_state"
+        android:layout_marginRight="@dimen/dp4"
+        android:layout_marginLeft="@dimen/dp8"
+        android:src="@drawable/ic_finish"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/sp14" />
-</LinearLayout>
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp4"
+        android:layout_marginStart="@dimen/dp8" />
+
+
+</RelativeLayout>

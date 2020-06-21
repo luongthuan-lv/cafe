@@ -27,15 +27,9 @@ public class Product implements Serializable {
     @Expose
     public String productType;
 
-    @SerializedName("productExport")
-    @Expose
-    public int productExport;
-
     @SerializedName("__v")
     @Expose
     public int __v;
-
-
 
     public String getId() {
         return id;
@@ -77,11 +71,4 @@ public class Product implements Serializable {
         this.productType = productType;
     }
 
-    public int getProductExport() {
-        return productExport;
-    }
-
-    public void setProductExport(int productExport) {
-        this.productExport = productExport;
-    }
 }

@@ -1,7 +1,9 @@
 package vn.touchspace.example.ui.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,8 +54,8 @@ public class InvoiceAdapter extends BaseRecyclerAdapter<Invoice, InvoiceAdapter.
         TextView tvPrice;
         @BindView(R.id.tv_date)
         TextView tvDate;
-        @BindView(R.id.tv_state)
-        TextView tvState;
+        @BindView(R.id.img_state)
+        ImageView imgState;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,13 +69,13 @@ public class InvoiceAdapter extends BaseRecyclerAdapter<Invoice, InvoiceAdapter.
             tvDate.setText(String.format("Ngày tạo: %s", invoice.getCreateDate()));
             switch (invoice.getState()) {
                 case "cancel":
-                    tvState.setText(R.string.str_state_cancel);
+                    imgState.setImageResource(R.drawable.ic_cancel);
                     break;
                 case "active":
-                    tvState.setText(R.string.str_state_active);
+                    imgState.setImageResource(R.drawable.ic_watch_later);
                     break;
                 case "finish":
-                    tvState.setText(R.string.str_state_finish);
+                    imgState.setImageResource(R.drawable.ic_finish);
                     break;
             }
         }

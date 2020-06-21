@@ -54,11 +54,6 @@ public class InvoiceCancelFragment extends BaseFragment implements InvoiceCancel
         mPresenter.getInvoices("cancel");
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mPresenter.onDetach();
-    }
 
     @Override
     protected void setUp(View view) {

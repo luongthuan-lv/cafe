@@ -73,8 +73,6 @@ public interface ActivityComponent {
 
     void inject(AccountFragment fragment);
 
-    void inject(InvoicesFragment fragment);
-
     void inject(InvoiceFragment fragment);
 
     void inject(InvoiceActiveFragment fragment);

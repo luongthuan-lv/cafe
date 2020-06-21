@@ -56,6 +56,7 @@ public class CustomerFragment extends BaseFragment implements CustomerMvpView {
         mPresenter.getCustomers();
     }
 
+
     @Override
     protected void setUp(View view) {
 

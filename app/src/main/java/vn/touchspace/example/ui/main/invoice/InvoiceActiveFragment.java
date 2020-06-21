@@ -53,11 +53,6 @@ public class InvoiceActiveFragment extends BaseFragment implements InvoiceActive
         mPresenter.getInvoices("active");
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mPresenter.onDetach();
-    }
 
     @Override
     protected void setUp(View view) {

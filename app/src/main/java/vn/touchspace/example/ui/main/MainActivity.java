@@ -62,7 +62,6 @@ public class MainActivity extends BaseActivity implements MainMvpView {
     ImageView icAdd;
 
     private long backPressedTime;
-    private InvoicesFragment invoiceFragment = InvoicesFragment.newInstance();
     private String role = "";
 
 
@@ -85,7 +84,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
         tvRole = headerNav.findViewById(R.id.tv_role);
         tvAvatar = headerNav.findViewById(R.id.tv_avatar);
 
-        gotoFragment(invoiceFragment, getString(R.string.menu_invoice));
+        gotoFragment(InvoicesFragment.newInstance(), getString(R.string.menu_invoice));
         icAdd.setVisibility(View.VISIBLE);
 
         mMainPresenter.getUserInfo();
@@ -98,7 +97,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
             switch (menuItem.getItemId()) {
                 case R.id.nav_invoice:
                     icAdd.setVisibility(View.VISIBLE);
-                    gotoFragment(invoiceFragment, getString(R.string.menu_invoice));
+                    gotoFragment(InvoicesFragment.newInstance(), getString(R.string.menu_invoice));
                     break;
                 case R.id.nav_customer:
                     icAdd.setVisibility(View.VISIBLE);

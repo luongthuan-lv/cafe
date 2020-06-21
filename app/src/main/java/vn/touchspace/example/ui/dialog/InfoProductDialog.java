@@ -29,8 +29,6 @@ public class InfoProductDialog extends BaseDialog {
     TextView tvPrice;
     @BindView(R.id.tv_type)
     TextView tvType;
-    @BindView(R.id.tv_export)
-    TextView tvExport;
     @BindView(R.id.btn_update)
     Button btnUpdate;
     @BindView(R.id.btn_remove)
@@ -57,7 +55,6 @@ public class InfoProductDialog extends BaseDialog {
         tvName.setText(product.getProductName());
         tvPrice.setText(String.format("Giá bán: %s VNĐ", AppUtils.formatNumber(product.getProductPrice())));
         tvType.setText(String.format("Loại sản phẩm: %s", product.getProductType()));
-        tvExport.setText(String.format("Đã bán: %s", product.getProductExport()));
     }
 
     @Override

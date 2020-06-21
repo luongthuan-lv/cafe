@@ -1,5 +1,7 @@
 package vn.touchspace.example.ui.main.customer.addcustomer;
 
+import android.os.Handler;
+
 import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -39,13 +41,13 @@ public class AddCustomerPresenter<V extends AddCustomerMvpView> extends BasePres
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     getMvpView().addCustomer(message.getMessage());
                 }, throwable -> {
                     if (!isViewAttached()) {
                         return;
                     }
-                    getMvpView().hideLoading();
+                    new Handler().postDelayed(() -> getMvpView().hideLoading(), 500);
                     handleApiError(throwable);
                 })
         );

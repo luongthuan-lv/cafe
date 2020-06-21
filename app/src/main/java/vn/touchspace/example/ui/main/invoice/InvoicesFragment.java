@@ -32,6 +32,7 @@ public class InvoicesFragment extends BaseFragment {
         return fragment;
     }
 
+
     @Override
     protected int getLayoutResource() {
         return R.layout.fragment_invoices;
@@ -41,15 +42,15 @@ public class InvoicesFragment extends BaseFragment {
     protected void init(Bundle saveInstanceState, View rootView) {
         adapter = new PagerFragmentAdapter(getChildFragmentManager());
 
-        adapter.addFragment(InvoiceActiveFragment.newInstance(), "Đã thanh toán");
+        adapter.addFragment(InvoiceActiveFragment.newInstance(), "Đang chờ");
         adapter.addFragment(InvoiceFragment.newInstance(), "Hoàn thành");
-        adapter.addFragment(InvoiceCancelFragment.newInstance(), "Hủy");
+        adapter.addFragment(InvoiceCancelFragment.newInstance(), "Đã hủy");
 
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(adapter.getCount());
         tablayout.setupWithViewPager(viewPager);
-
     }
+
 
     @Override
     protected void setUp(View view) {
