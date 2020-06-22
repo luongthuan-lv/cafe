@@ -3,7 +3,9 @@ package vn.touchspace.example.data.network.model.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ProductOfInvoice {
+import java.io.Serializable;
+
+public class ProductOfInvoice implements Serializable {
 
     @SerializedName("productName")
     @Expose

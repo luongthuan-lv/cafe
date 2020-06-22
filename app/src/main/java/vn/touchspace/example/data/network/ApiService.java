@@ -19,6 +19,7 @@ import vn.touchspace.example.data.network.model.request.UpdateCustomerRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.request.UpdateStateRequest;
 import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
@@ -107,5 +108,10 @@ public interface ApiService {
     @Headers("Content-Type: application/json; charset=utf-8")
     @GET(ENDPOINT_GET_INVOICES)
     Single<List<Invoice>> getInvoices(@Query("state") String state);
+
+    /* update state */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_UPDATE_STATE)
+    Single<Message> updateState(@Body UpdateStateRequest request);
 
 }

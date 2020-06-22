@@ -1,4 +1,4 @@
-package vn.touchspace.example.ui.main.invoice;
+package vn.touchspace.example.ui.main.invoice.invoicecancel;
 
 import android.os.Handler;
 
@@ -9,13 +9,13 @@ import vn.touchspace.example.data.DataManager;
 import vn.touchspace.example.ui.base.BasePresenter;
 import vn.touchspace.example.utils.rx.SchedulerProvider;
 
-public class InvoiceActivePresenter<V extends InvoiceActiveMvpView> extends BasePresenter<V>
-        implements InvoiceActiveMvpPresenter<V> {
+public class InvoiceCancelPresenter<V extends InvoiceCancelMvpView> extends BasePresenter<V>
+        implements InvoiceCancelMvpPresenter<V> {
 
-    private static final String TAG = "InvoiceActivePresenter";
+    private static final String TAG = "InvoiceCancelPresenter";
 
     @Inject
-    public InvoiceActivePresenter(DataManager dataManager, SchedulerProvider schedulerProvider, CompositeDisposable compositeDisposable) {
+    public InvoiceCancelPresenter(DataManager dataManager, SchedulerProvider schedulerProvider, CompositeDisposable compositeDisposable) {
         super(dataManager, schedulerProvider, compositeDisposable);
     }
 

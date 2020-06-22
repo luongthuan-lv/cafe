@@ -10,28 +10,33 @@
     <application
         android:name="vn.touchspace.example.manager.MvpApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_coffee"
         android:label="${APP_NAME}"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name="vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
-        <activity android:name="vn.touchspace.example.ui.main.account.addstaff.AddStaffActivity"
+        <activity android:name="vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name="vn.touchspace.example.ui.main.product.updateproduct.UpdateProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name="vn.touchspace.example.ui.main.customer.addcustomer.AddCustomerActivity"
+        <activity
+            android:name="vn.touchspace.example.ui.main.account.addstaff.AddStaffActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name="vn.touchspace.example.ui.main.product.addproduct.AddProductActivity"
+        <activity
+            android:name="vn.touchspace.example.ui.main.customer.addcustomer.AddCustomerActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="vn.touchspace.example.ui.main.product.addproduct.AddProductActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity
             android:name="vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" />

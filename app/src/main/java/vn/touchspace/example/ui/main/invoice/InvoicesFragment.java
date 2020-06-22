@@ -11,8 +11,9 @@ import com.touchspace.example.R;
 import butterknife.BindView;
 import vn.touchspace.example.ui.adapter.PagerFragmentAdapter;
 import vn.touchspace.example.ui.base.BaseFragment;
-import vn.touchspace.example.ui.main.account.manager.ManagerFragment;
-import vn.touchspace.example.ui.main.account.staff.StaffFragment;
+import vn.touchspace.example.ui.main.invoice.invoiceactive.InvoiceActiveFragment;
+import vn.touchspace.example.ui.main.invoice.invoicecancel.InvoiceCancelFragment;
+import vn.touchspace.example.ui.main.invoice.invoicefinish.InvoiceFragment;
 
 public class InvoicesFragment extends BaseFragment {
 

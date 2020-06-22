@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:padding="@dimen/dp16"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_customer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp8"
+            android:id="@+id/tv_staff_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp8"
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp8"
+            android:id="@+id/tv_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp8"
+            android:id="@+id/tv_discount_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+            android:layout_marginTop="@dimen/dp8"
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <TextView
+           android:textStyle="bold"
+            android:text="@string/str_detail"
+            android:layout_marginTop="@dimen/dp16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:paddingBottom="@dimen/dp80"
+            android:layout_marginTop="@dimen/dp4"
+            android:id="@+id/rcy_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/dp16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:id="@+id/btn_cancel"
+            style="@style/ButtonSmall"
+            android:text="@string/btn_cancel"/>
+        <Button
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginTop="@dimen/dp16"
+            android:id="@+id/btn_finish"
+            style="@style/ButtonSmall"
+            android:text="@string/btn_finish"
+            android:layout_marginStart="@dimen/dp20" />
+    </LinearLayout>
+
+
+</RelativeLayout>

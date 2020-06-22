@@ -3,12 +3,13 @@ package vn.touchspace.example.data.network.model.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Invoice {
+public class Invoice implements Serializable {
     @SerializedName("list")
     @Expose
-    private List<ProductOfInvoice> list = null;
+    private List<ProductOfInvoice> list;
     @SerializedName("_id")
     @Expose
     private String id;

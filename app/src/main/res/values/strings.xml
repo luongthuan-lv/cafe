@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">ExampleMvp</string>
-    <string name="app_name_dev">ExampleMvp Dev</string>
+    <string name="app_name">Cafe Manager</string>
+    <string name="app_name_dev">Cafe Manager</string>
     <string name="action_settings">Settings</string>
     <string name="text_notify_sample">I am Notification Sample</string>
     <string name="text_notify_channel_sample">Channel Notification Sample</string>
@@ -49,6 +49,12 @@
     <string name="str_add_customer_tel">Số điện thoại</string>
     <string name="title_add_customer">Thêm khách hàng</string>
     <string name="str_state_cancel">Trạng thái: Hủy</string>
-    <string name="str_state_active">Trạng thái: Đã thanh toán</string>
+    <string name="str_state_active">Trạng thái: Đang chờ</string>
     <string name="str_state_finish">Trạng thái: Hoàn thành</string>
+    <string name="btn_finish">Hoàn thành</string>
+    <string name="btn_cancel">Hủy đơn</string>
+    <string name="title_invoice_detail">Thông tin hóa đơn</string>
+    <string name="str_name_of_product">Sản phẩm:</string>
+    <string name="str_number_of_product">Số lượng:</string>
+    <string name="str_detail">Chi tiết:</string>
 </resources>

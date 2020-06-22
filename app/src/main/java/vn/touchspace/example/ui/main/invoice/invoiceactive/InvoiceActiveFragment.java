@@ -1,5 +1,6 @@
-package vn.touchspace.example.ui.main.invoice;
+package vn.touchspace.example.ui.main.invoice.invoiceactive;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +16,7 @@ import butterknife.BindView;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.ui.adapter.InvoiceAdapter;
 import vn.touchspace.example.ui.base.BaseFragment;
+import vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailActivity;
 import vn.touchspace.example.utils.recycler.SetupRvUtils;
 
 public class InvoiceActiveFragment extends BaseFragment implements InvoiceActiveMvpView{
@@ -64,7 +66,9 @@ public class InvoiceActiveFragment extends BaseFragment implements InvoiceActive
         adapter = new InvoiceAdapter(list);
         SetupRvUtils.setupLinearLayoutRecyclerView(getContext(), rcyView);
         adapter.setCallBack(position -> {
-
+            Intent intent = new Intent(getContext(), InvoiceDetailActivity.class);
+            intent.putExtra("invoice_model", list.get(position));
+            startActivity(intent);
         });
         rcyView.setAdapter(adapter);
     }

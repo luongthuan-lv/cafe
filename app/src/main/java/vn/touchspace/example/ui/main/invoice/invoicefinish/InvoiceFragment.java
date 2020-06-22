@@ -1,5 +1,6 @@
-package vn.touchspace.example.ui.main.invoice;
+package vn.touchspace.example.ui.main.invoice.invoicefinish;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,26 +16,26 @@ import butterknife.BindView;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.ui.adapter.InvoiceAdapter;
 import vn.touchspace.example.ui.base.BaseFragment;
+import vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailActivity;
 import vn.touchspace.example.utils.recycler.SetupRvUtils;
 
-public class InvoiceCancelFragment extends BaseFragment implements InvoiceCancelMvpView{
+public class InvoiceFragment extends BaseFragment implements InvoiceMvpView{
 
     @BindView(R.id.rcy_view)
     RecyclerView rcyView;
     @Inject
-    InvoiceCancelMvpPresenter<InvoiceCancelMvpView> mPresenter;
+    InvoiceMvpPresenter<InvoiceMvpView> mPresenter;
     private InvoiceAdapter adapter;
 
 
-    public static InvoiceCancelFragment newInstance() {
+    public static InvoiceFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        InvoiceCancelFragment fragment = new InvoiceCancelFragment();
+        InvoiceFragment fragment = new InvoiceFragment();
         fragment.setArguments(args);
         return fragment;
     }
-
 
     @Override
     protected int getLayoutResource() {
@@ -51,9 +52,8 @@ public class InvoiceCancelFragment extends BaseFragment implements InvoiceCancel
     @Override
     public void onResume() {
         super.onResume();
-        mPresenter.getInvoices("cancel");
+        mPresenter.getInvoices("finish");
     }
-
 
     @Override
     protected void setUp(View view) {
@@ -65,7 +65,9 @@ public class InvoiceCancelFragment extends BaseFragment implements InvoiceCancel
         adapter = new InvoiceAdapter(list);
         SetupRvUtils.setupLinearLayoutRecyclerView(getContext(), rcyView);
         adapter.setCallBack(position -> {
-
+            Intent intent = new Intent(getContext(), InvoiceDetailActivity.class);
+            intent.putExtra("invoice_model", list.get(position));
+            startActivity(intent);
         });
         rcyView.setAdapter(adapter);
     }

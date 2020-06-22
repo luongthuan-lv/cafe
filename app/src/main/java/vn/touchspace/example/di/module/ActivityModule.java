@@ -57,15 +57,21 @@ import vn.touchspace.example.ui.main.info.updateinfo.UpdateInfoPresenter;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpPresenter;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordMvpView;
 import vn.touchspace.example.ui.main.info.updateinfo.UpdatePasswordPresenter;
-import vn.touchspace.example.ui.main.invoice.InvoiceActiveMvpPresenter;
-import vn.touchspace.example.ui.main.invoice.InvoiceActiveMvpView;
-import vn.touchspace.example.ui.main.invoice.InvoiceActivePresenter;
-import vn.touchspace.example.ui.main.invoice.InvoiceCancelMvpPresenter;
-import vn.touchspace.example.ui.main.invoice.InvoiceCancelMvpView;
-import vn.touchspace.example.ui.main.invoice.InvoiceCancelPresenter;
-import vn.touchspace.example.ui.main.invoice.InvoiceMvpPresenter;
-import vn.touchspace.example.ui.main.invoice.InvoiceMvpView;
-import vn.touchspace.example.ui.main.invoice.InvoicePresenter;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceMvpView;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoicePresenter;
+import vn.touchspace.example.ui.main.invoice.invoiceactive.InvoiceActiveMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.invoiceactive.InvoiceActiveMvpView;
+import vn.touchspace.example.ui.main.invoice.invoiceactive.InvoiceActivePresenter;
+import vn.touchspace.example.ui.main.invoice.invoicecancel.InvoiceCancelMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.invoicecancel.InvoiceCancelMvpView;
+import vn.touchspace.example.ui.main.invoice.invoicecancel.InvoiceCancelPresenter;
+import vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailMvpView;
+import vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailPresenter;
+import vn.touchspace.example.ui.main.invoice.invoicefinish.InvoiceMvpPresenter;
+import vn.touchspace.example.ui.main.invoice.invoicefinish.InvoiceMvpView;
+import vn.touchspace.example.ui.main.invoice.invoicefinish.InvoicePresenter;
 import vn.touchspace.example.ui.main.product.ProductMvpPresenter;
 import vn.touchspace.example.ui.main.product.ProductMvpView;
 import vn.touchspace.example.ui.main.product.ProductPresenter;
@@ -179,6 +185,20 @@ public class ActivityModule {
     @PerActivity
     AddCustomerMvpPresenter<AddCustomerMvpView> provideAddCustomerPresenter(
             AddCustomerPresenter<AddCustomerMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    AddInvoiceMvpPresenter<AddInvoiceMvpView> provideAddInvoicePresenter(
+            AddInvoicePresenter<AddInvoiceMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    InvoiceDetailMvpPresenter<InvoiceDetailMvpView> provideInvoiceDetailPresenter(
+            InvoiceDetailPresenter<InvoiceDetailMvpView> presenter) {
         return presenter;
     }
 

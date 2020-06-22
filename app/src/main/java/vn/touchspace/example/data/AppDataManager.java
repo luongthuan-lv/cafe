@@ -17,6 +17,7 @@ import vn.touchspace.example.data.network.model.request.UpdateCustomerRequest;
 import vn.touchspace.example.data.network.model.request.UpdateInfoRequest;
 import vn.touchspace.example.data.network.model.request.UpdatePasswordRequest;
 import vn.touchspace.example.data.network.model.request.UpdateProductRequest;
+import vn.touchspace.example.data.network.model.request.UpdateStateRequest;
 import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
@@ -183,6 +184,8 @@ public class AppDataManager implements DataManager {
         return mRealmHelper.findAllSortedAsync(type, key, value, field, sort);
     }
 
+
+
     @Override
     public Flowable<User> findUser(String nameUser) {
         return mDbHelper.findUser(nameUser);
@@ -271,5 +274,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<List<Invoice>> getInvoices(String state) {
         return mApiService.getInvoices(state);
+    }
+
+    @Override
+    public Single<Message> updateState(UpdateStateRequest request) {
+        return mApiService.updateState(request);
     }
 }

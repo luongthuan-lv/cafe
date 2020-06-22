@@ -1,4 +1,4 @@
-package vn.touchspace.example.ui.main.invoice;
+package vn.touchspace.example.ui.main.invoice.invoiceactive;
 
 import android.os.Handler;
 
@@ -6,19 +6,16 @@ import javax.inject.Inject;
 
 import io.reactivex.disposables.CompositeDisposable;
 import vn.touchspace.example.data.DataManager;
-import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.base.BasePresenter;
-import vn.touchspace.example.ui.main.info.InfoMvpPresenter;
-import vn.touchspace.example.ui.main.info.InfoMvpView;
 import vn.touchspace.example.utils.rx.SchedulerProvider;
 
-public class InvoicePresenter<V extends InvoiceMvpView> extends BasePresenter<V>
-        implements InvoiceMvpPresenter<V> {
+public class InvoiceActivePresenter<V extends InvoiceActiveMvpView> extends BasePresenter<V>
+        implements InvoiceActiveMvpPresenter<V> {
 
-    private static final String TAG = "InvoicePresenter";
+    private static final String TAG = "InvoiceActivePresenter";
 
     @Inject
-    public InvoicePresenter(DataManager dataManager, SchedulerProvider schedulerProvider, CompositeDisposable compositeDisposable) {
+    public InvoiceActivePresenter(DataManager dataManager, SchedulerProvider schedulerProvider, CompositeDisposable compositeDisposable) {
         super(dataManager, schedulerProvider, compositeDisposable);
     }
 
