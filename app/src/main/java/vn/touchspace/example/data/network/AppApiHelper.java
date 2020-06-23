@@ -36,6 +36,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
+import vn.touchspace.example.data.network.model.response.Statistical;
 import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity;
 
@@ -162,5 +163,10 @@ public class AppApiHelper implements ApiService {
     @Override
     public Single<Message> addInvoice(AddInvoiceRequest request) {
         return apiService.addInvoice(request);
+    }
+
+    @Override
+    public Single<List<Statistical>> getStatistical(String startDate, String endDate, String state) {
+        return apiService.getStatistical(startDate, endDate, state);
     }
 }

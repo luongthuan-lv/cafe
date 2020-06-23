@@ -22,6 +22,7 @@ import vn.touchspace.example.data.network.model.request.UpdateStateRequest;
 import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
+import vn.touchspace.example.data.network.model.response.Statistical;
 import vn.touchspace.example.data.prefs.PreferencesHelper;
 import vn.touchspace.example.data.realm.RealmHelper;
 import vn.touchspace.example.data.room.DbHelper;
@@ -286,5 +287,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<Message> addInvoice(AddInvoiceRequest request) {
         return mApiService.addInvoice(request);
+    }
+
+    @Override
+    public Single<List<Statistical>> getStatistical(String startDate, String endDate, String state) {
+        return mApiService.getStatistical(startDate, endDate, state);
     }
 }

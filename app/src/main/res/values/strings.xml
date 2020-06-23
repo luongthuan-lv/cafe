@@ -67,4 +67,7 @@
     <string name="str_total">Thành tiền:</string>
     <string name="str_discount_percentage">Chiết khấu</string>
     <string name="str_add_discount_percentage">Chiết khấu: 0%</string>
+    <string name="state_finish">Đã hoàn thành</string>
+    <string name="state_active">Đang chờ</string>
+    <string name="state_cancel">Đã hủy</string>
 </resources>

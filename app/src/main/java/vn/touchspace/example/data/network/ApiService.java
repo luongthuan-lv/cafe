@@ -25,6 +25,7 @@ import vn.touchspace.example.data.network.model.response.Customer;
 import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.network.model.response.SignIn;
+import vn.touchspace.example.data.network.model.response.Statistical;
 import vn.touchspace.example.data.network.model.response.User;
 import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity;
 
@@ -121,10 +122,12 @@ public interface ApiService {
     @POST(ENDPOINT_CREATE_INVOICES)
     Single<Message> addInvoice(@Body AddInvoiceRequest request);
 
-//    /* statistical */
-//    @Headers("Content-Type: application/json; charset=utf-8")
-//    @GET(ENDPOINT_STATISTICAL)
-//    Single<> getStatistical(@Query("startDate") String startDate,
-//                                         @Query("endDate") String endDate);
+
+    /* statistical */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @GET(ENDPOINT_STATISTICAL)
+    Single<List<Statistical>> getStatistical(@Query("startDate") String startDate,
+                                             @Query("endDate") String endDate,
+                                             @Query("state") String state);
 
 }

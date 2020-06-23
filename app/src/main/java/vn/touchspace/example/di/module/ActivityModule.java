@@ -81,6 +81,9 @@ import vn.touchspace.example.ui.main.product.addproduct.AddProductPresenter;
 import vn.touchspace.example.ui.main.product.updateproduct.UpdateProductMvpPresenter;
 import vn.touchspace.example.ui.main.product.updateproduct.UpdateProductMvpView;
 import vn.touchspace.example.ui.main.product.updateproduct.UpdateProductPresenter;
+import vn.touchspace.example.ui.main.statistical.StatisticalMvpPresenter;
+import vn.touchspace.example.ui.main.statistical.StatisticalMvpView;
+import vn.touchspace.example.ui.main.statistical.StatisticalPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpPresenter;
 import vn.touchspace.example.ui.splash.SplashMvpView;
 import vn.touchspace.example.ui.splash.SplashPresenter;
@@ -143,6 +146,13 @@ public class ActivityModule {
     @PerActivity
     MainMvpPresenter<MainMvpView> provideMainPresenter(
             MainPresenter<MainMvpView> presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @PerActivity
+    StatisticalMvpPresenter<StatisticalMvpView> provideStatisticalPresenter(
+            StatisticalPresenter<StatisticalMvpView> presenter) {
         return presenter;
     }
 

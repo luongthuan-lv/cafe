@@ -1,20 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/dp16"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
     android:background="@color/bg_color">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp16"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thống Kê"
-        android:textSize="@dimen/sp32"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="right"
+        tools:ignore="RtlHardcoded">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Từ"
+            android:layout_marginRight="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14"
+            android:layout_marginEnd="@dimen/dp8" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp8"
+            android:paddingRight="@dimen/dp8"
+            android:paddingTop="@dimen/dp4"
+            android:paddingBottom="@dimen/dp4"
+            android:textSize="@dimen/sp14"
+            android:textColor="@color/colorPrimary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Đến"
+            android:layout_marginRight="@dimen/dp8"
+            android:layout_marginLeft="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sp14"/>
+
+        <TextView
+            android:id="@+id/tv_end_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp8"
+            android:paddingRight="@dimen/dp8"
+            android:paddingTop="@dimen/dp4"
+            android:paddingBottom="@dimen/dp4"
+            android:textSize="@dimen/sp14"
+            android:textColor="@color/colorPrimary"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp20"
+        android:paddingVertical="@dimen/dp20"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/bg_product"
+        android:layout_width="@dimen/dp240"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="@string/state_finish"
+            android:textSize="@dimen/sp16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_finish"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp12"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp20"
+        android:paddingVertical="@dimen/dp20"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/bg_product"
+        android:layout_width="@dimen/dp240"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="@string/state_active"
+            android:textSize="@dimen/sp16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_active"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp12"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="@dimen/dp20"
+        android:paddingVertical="@dimen/dp20"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@drawable/bg_product"
+        android:layout_width="@dimen/dp240"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:text="@string/state_cancel"
+            android:textSize="@dimen/sp16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/dp12"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sp18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
