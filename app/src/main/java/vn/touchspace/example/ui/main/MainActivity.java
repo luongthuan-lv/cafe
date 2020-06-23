@@ -32,6 +32,7 @@ import vn.touchspace.example.ui.main.customer.CustomerFragment;
 import vn.touchspace.example.ui.main.customer.addcustomer.AddCustomerActivity;
 import vn.touchspace.example.ui.main.info.InfoFragment;
 import vn.touchspace.example.ui.main.invoice.InvoicesFragment;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity;
 import vn.touchspace.example.ui.main.product.ProductFragment;
 import vn.touchspace.example.ui.main.product.addproduct.AddProductActivity;
 import vn.touchspace.example.ui.main.statistical.StatisticalFragment;
@@ -85,6 +86,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
 
         gotoFragment(InvoicesFragment.newInstance(), getString(R.string.menu_invoice));
         icAdd.setVisibility(View.VISIBLE);
+        icAdd.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddInvoiceActivity.class)));
 
         mMainPresenter.getUserInfo();
 
@@ -97,6 +99,7 @@ public class MainActivity extends BaseActivity implements MainMvpView {
                 case R.id.nav_invoice:
                     icAdd.setVisibility(View.VISIBLE);
                     gotoFragment(InvoicesFragment.newInstance(), getString(R.string.menu_invoice));
+                    icAdd.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, AddInvoiceActivity.class)));
                     break;
                 case R.id.nav_customer:
                     icAdd.setVisibility(View.VISIBLE);

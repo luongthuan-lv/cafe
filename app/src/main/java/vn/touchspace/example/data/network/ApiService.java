@@ -11,6 +11,7 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddCustomerRequest;
+import vn.touchspace.example.data.network.model.request.AddInvoiceRequest;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
@@ -25,6 +26,7 @@ import vn.touchspace.example.data.network.model.response.Invoice;
 import vn.touchspace.example.data.network.model.response.Product;
 import vn.touchspace.example.data.network.model.response.SignIn;
 import vn.touchspace.example.data.network.model.response.User;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity;
 
 import static vn.touchspace.example.data.network.ApiEndPoint.*;
 
@@ -113,5 +115,16 @@ public interface ApiService {
     @Headers("Content-Type: application/json; charset=utf-8")
     @POST(ENDPOINT_UPDATE_STATE)
     Single<Message> updateState(@Body UpdateStateRequest request);
+
+    /* add invoices */
+    @Headers("Content-Type: application/json; charset=utf-8")
+    @POST(ENDPOINT_CREATE_INVOICES)
+    Single<Message> addInvoice(@Body AddInvoiceRequest request);
+
+//    /* statistical */
+//    @Headers("Content-Type: application/json; charset=utf-8")
+//    @GET(ENDPOINT_STATISTICAL)
+//    Single<> getStatistical(@Query("startDate") String startDate,
+//                                         @Query("endDate") String endDate);
 
 }

@@ -50,7 +50,7 @@ public class InvoiceDetailAdapter extends BaseRecyclerAdapter<ProductOfInvoice, 
 
         void fillData(ProductOfInvoice product) {
             tvName.setText(product.getProductName());
-            tvQuantily.setText(product.getNumberOfProduct());
+            tvQuantily.setText(String.format("%s", product.getNumberOfProduct()));
         }
     }
 

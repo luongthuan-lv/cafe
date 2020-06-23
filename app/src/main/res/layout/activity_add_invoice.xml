@@ -1,11 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="vn.touchspace.example.ui.main.invoice.invoicedetail.InvoiceDetailActivity">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginHorizontal="@dimen/dp16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <AutoCompleteTextView
+        android:background="@null"
+        android:hint="@string/str_add_customer_name"
+        android:gravity="bottom"
+        android:id="@+id/edt_customer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp16"
+        android:textColor="@color/colorPrimary"
+        android:drawablePadding="@dimen/dp16"
+        android:textSize="@dimen/sp16"
+        tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <AutoCompleteTextView
+            android:background="@null"
+            android:hint="@string/str_add_staff_name"
+            android:gravity="bottom"
+            android:id="@+id/edt_staff_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <TextView
+            android:background="@null"
+            android:gravity="bottom"
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <TextView
+            android:background="@null"
+            android:text="@string/str_add_discount_percentage"
+            android:gravity="bottom"
+            android:id="@+id/tv_discount_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <AutoCompleteTextView
+            android:background="@null"
+            android:hint="@string/str_add_product_name"
+            android:gravity="bottom"
+            android:id="@+id/edt_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <AutoCompleteTextView
+            android:inputType="number"
+            android:background="@null"
+            android:hint="@string/str_add_number_of_product"
+            android:gravity="bottom"
+            android:id="@+id/edt_number_of_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp8"
+            android:textColor="@color/colorPrimary"
+            android:drawablePadding="@dimen/dp16"
+            android:textSize="@dimen/sp16"
+            tools:ignore="TextViewEdits" />
+
+        <View
+            android:layout_marginTop="@dimen/dp8"
+            android:background="@color/line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp1" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dp8"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_marginRight="@dimen/dp20"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/dp12"
+                android:id="@+id/btn_add_product"
+                style="@style/ButtonSmall"
+                android:text="@string/btn_add_product"
+                android:layout_marginEnd="@dimen/dp20" />
+
+            <Button
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:id="@+id/btn_add_invoice"
+                style="@style/ButtonSmall"
+                android:text="@string/btn_add_invoice"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp20">
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/str_invoice_detail"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold"
+                android:gravity="start" />
+
+            <TextView
+                android:gravity="start"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:id="@+id/tv_total_value"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp16"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcy_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

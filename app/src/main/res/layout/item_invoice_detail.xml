@@ -16,6 +16,8 @@
         android:textSize="@dimen/sp14"/>
 
     <TextView
+        android:layout_marginLeft="@dimen/dp4"
+        android:layout_marginStart="@dimen/dp4"
         android:textColor="@color/colorPrimary"
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
@@ -23,8 +25,6 @@
         android:layout_marginVertical="4dp"
         android:layout_toRightOf="@id/tv_name_title"
         android:textSize="@dimen/sp14"
-        android:layout_marginRight="@dimen/dp4"
-        android:layout_marginEnd="@dimen/dp4"
         android:layout_toEndOf="@id/tv_name_title" />
 
     <TextView
@@ -37,6 +37,8 @@
         android:textSize="@dimen/sp14" />
 
     <TextView
+        android:layout_marginLeft="@dimen/dp4"
+        android:layout_marginStart="@dimen/dp4"
         android:textColor="@color/colorPrimary"
         android:id="@+id/tv_quantily"
         android:layout_width="wrap_content"
@@ -44,8 +46,6 @@
         android:layout_below="@+id/tv_name_title"
         android:layout_toRightOf="@id/tv_quantily_title"
         android:textSize="@dimen/sp14"
-        android:layout_marginRight="@dimen/dp4"
-        android:layout_marginEnd="@dimen/dp4"
         android:layout_toEndOf="@id/tv_quantily_title" />
 
     <View

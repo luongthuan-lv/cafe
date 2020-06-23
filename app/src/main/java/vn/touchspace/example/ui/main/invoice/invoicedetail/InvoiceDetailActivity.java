@@ -83,7 +83,7 @@ public class InvoiceDetailActivity extends BaseActivity implements InvoiceDetail
         tvStaffName.setText(String.format("Nhân viên tạo: %s", invoice.getCreateStaff()));
         tvValue.setText(String.format("Tổng giá trị: %s VNĐ", AppUtils.formatNumber(invoice.getTotalValue())));
         tvDate.setText(String.format("Ngày tạo: %s", invoice.getCreateDate()));
-        tvDiscountPercentage.setText(String.format("Chiết khấu: %s", invoice.getDiscountPercentage()));
+        tvDiscountPercentage.setText(String.format("Chiết khấu: %s%%", invoice.getDiscountPercentage()));
 
         switch (invoice.getState()) {
             case "cancel":

@@ -17,7 +17,7 @@ public class Product implements Serializable {
 
     @SerializedName("productPrice")
     @Expose
-    public String productPrice;
+    public double productPrice;
 
     @SerializedName("productImage")
     @Expose
@@ -47,11 +47,11 @@ public class Product implements Serializable {
         this.productName = productName;
     }
 
-    public String getProductPrice() {
+    public double getProductPrice() {
         return productPrice;
     }
 
-    public void setProductPrice(String productPrice) {
+    public void setProductPrice(double productPrice) {
         this.productPrice = productPrice;
     }
 

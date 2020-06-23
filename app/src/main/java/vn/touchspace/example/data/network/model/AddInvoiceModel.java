@@ -1,25 +1,17 @@
-package vn.touchspace.example.data.network.model.response;
+package vn.touchspace.example.data.network.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
-
-public class ProductOfInvoice implements Serializable {
-
-    @SerializedName("productName")
-    @Expose
+public class AddInvoiceModel {
     private String productName;
-    @SerializedName("numberOfProduct")
-    @Expose
     private int numberOfProduct;
+    private double productPrice;
 
-    public ProductOfInvoice(String productName, int numberOfProduct) {
+    public AddInvoiceModel(String productName, int numberOfProduct, double productPrice) {
         this.productName = productName;
         this.numberOfProduct = numberOfProduct;
+        this.productPrice = productPrice;
     }
 
-    public ProductOfInvoice() {
+    public AddInvoiceModel() {
     }
 
     public String getProductName() {
@@ -36,5 +28,13 @@ public class ProductOfInvoice implements Serializable {
 
     public void setNumberOfProduct(int numberOfProduct) {
         this.numberOfProduct = numberOfProduct;
+    }
+
+    public double getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
     }
 }

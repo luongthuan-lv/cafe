@@ -4,6 +4,7 @@ import com.touchspace.example.BuildConfig;
 
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddCustomerRequest;
+import vn.touchspace.example.data.network.model.request.AddInvoiceRequest;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
@@ -36,6 +37,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
 import vn.touchspace.example.data.network.model.response.User;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity;
 
 /**
  * Created by GNUD on 02/12/2017.
@@ -155,5 +157,10 @@ public class AppApiHelper implements ApiService {
     @Override
     public Single<Message> updateState(UpdateStateRequest request) {
         return apiService.updateState(request);
+    }
+
+    @Override
+    public Single<Message> addInvoice(AddInvoiceRequest request) {
+        return apiService.addInvoice(request);
     }
 }

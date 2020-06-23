@@ -9,6 +9,7 @@ import io.reactivex.Observable;
 import vn.touchspace.example.data.network.ApiService;
 import vn.touchspace.example.data.network.model.Message;
 import vn.touchspace.example.data.network.model.request.AddCustomerRequest;
+import vn.touchspace.example.data.network.model.request.AddInvoiceRequest;
 import vn.touchspace.example.data.network.model.request.AddProductRequest;
 import vn.touchspace.example.data.network.model.request.AddStaffRequest;
 import vn.touchspace.example.data.network.model.request.RemoveRequest;
@@ -35,6 +36,7 @@ import io.realm.RealmObject;
 import io.realm.RealmResults;
 import io.realm.Sort;
 import retrofit2.http.Body;
+import vn.touchspace.example.ui.main.invoice.addinvoice.AddInvoiceActivity;
 
 /**
  * Created by GNUD on 02/12/2017.
@@ -279,5 +281,10 @@ public class AppDataManager implements DataManager {
     @Override
     public Single<Message> updateState(UpdateStateRequest request) {
         return mApiService.updateState(request);
+    }
+
+    @Override
+    public Single<Message> addInvoice(AddInvoiceRequest request) {
+        return mApiService.addInvoice(request);
     }
 }

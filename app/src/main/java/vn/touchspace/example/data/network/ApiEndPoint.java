@@ -27,4 +27,6 @@ public final class ApiEndPoint {
     static final String ENDPOINT_GET_INVOICES = "get-invoice-list";
     static final String ENDPOINT_CREATE_INVOICES = "add-invoice";
     static final String ENDPOINT_UPDATE_STATE = "state-invoice";
+
+    static final String ENDPOINT_STATISTICAL = "count-invoice";
 }

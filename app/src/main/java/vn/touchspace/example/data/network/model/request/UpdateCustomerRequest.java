@@ -7,9 +7,8 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class UpdateCustomerRequest {
-
-    @SerializedName("customerName")
-    public String customerName;
-    @SerializedName("customerPhone")
-    public String customerPhone;
+    @SerializedName("id")
+    public String id;
+    @SerializedName("customerInvoiceSum")
+    public double customerInvoiceSum;
 }

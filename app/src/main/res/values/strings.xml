@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Cafe Manager</string>
+    <string name="app_name">Coffee Manager</string>
     <string name="app_name_dev">Cafe Manager</string>
     <string name="action_settings">Settings</string>
     <string name="text_notify_sample">I am Notification Sample</string>
@@ -57,4 +57,14 @@
     <string name="str_name_of_product">Sản phẩm:</string>
     <string name="str_number_of_product">Số lượng:</string>
     <string name="str_detail">Chi tiết:</string>
+    <string name="str_add_staff_name">Nhân viên tạo đơn</string>
+    <string name="str_add_product_name">Tên sản phẩm</string>
+    <string name="str_add_number_of_product">Số lượng</string>
+    <string name="btn_add_product">Thêm sản phẩm</string>
+    <string name="btn_add_invoice">Thanh toán</string>
+    <string name="str_invoice_detail">Chi tiết hóa đơn:</string>
+    <string name="title_add_invoice">Tạo hóa đơn</string>
+    <string name="str_total">Thành tiền:</string>
+    <string name="str_discount_percentage">Chiết khấu</string>
+    <string name="str_add_discount_percentage">Chiết khấu: 0%</string>
 </resources>

@@ -23,15 +23,14 @@ public class AddStaffPresenter<V extends AddStaffMvpView> extends BasePresenter<
 
     @Override
     public void addStaff(String username, String role) {
-        AddStaffRequest request = new AddStaffRequest();
-       request.fullName = "Chưa cập nhật";
-       request.birthday = "00/00/0000";
-       request.password = "12345";
-       request.role = role;
-       request.telephoneNumber = "0123456789";
-       request.username = username;
-
         getMvpView().showLoading();
+        AddStaffRequest request = new AddStaffRequest();
+        request.fullName = username;
+        request.birthday = "00/00/0000";
+        request.password = "12345";
+        request.role = role;
+        request.telephoneNumber = "0123456789";
+        request.username = username;
         getCompositeDisposable().add(getDataManager()
                 .createStaff(request)
                 .subscribeOn(getSchedulerProvider().io())

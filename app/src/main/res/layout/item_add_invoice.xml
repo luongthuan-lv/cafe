@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dp16"
+    android:layout_marginLeft="@dimen/dp16"
+    android:layout_marginTop="@dimen/dp4">
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp8"
+        android:background="@drawable/ic_cancel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/dp8" />
+
+
+    <TextView
+        android:id="@+id/tv_name_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp4"
+        android:text="@string/str_name_of_product"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="4dp"
+        android:layout_marginStart="@dimen/dp4"
+        android:layout_marginLeft="@dimen/dp4"
+        android:layout_toEndOf="@id/tv_name_title"
+        android:layout_toRightOf="@id/tv_name_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/tv_quantily_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name_title"
+        android:text="@string/str_number_of_product"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/tv_quantily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_name_title"
+        android:layout_marginStart="@dimen/dp4"
+        android:layout_marginLeft="@dimen/dp4"
+        android:layout_toEndOf="@id/tv_quantily_title"
+        android:layout_toRightOf="@id/tv_quantily_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/tv_total_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_quantily"
+        android:text="@string/str_total"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <TextView
+        android:id="@+id/tv_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_quantily"
+        android:layout_marginStart="@dimen/dp4"
+        android:layout_marginLeft="@dimen/dp4"
+        android:layout_toEndOf="@id/tv_total_title"
+        android:layout_toRightOf="@id/tv_total_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/sp14" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tv_total_title"
+        android:layout_marginTop="@dimen/dp8"
+        android:background="@color/line_gray" />
+
+</RelativeLayout>

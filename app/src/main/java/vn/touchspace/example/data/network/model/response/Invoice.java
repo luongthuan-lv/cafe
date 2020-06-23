@@ -24,7 +24,7 @@ public class Invoice implements Serializable {
     private String createStaff;
     @SerializedName("discountPercentage")
     @Expose
-    private Integer discountPercentage;
+    private int discountPercentage;
     @SerializedName("totalValue")
     @Expose
     private double totalValue;
@@ -75,11 +75,11 @@ public class Invoice implements Serializable {
         this.createStaff = createStaff;
     }
 
-    public Integer getDiscountPercentage() {
+    public int getDiscountPercentage() {
         return discountPercentage;
     }
 
-    public void setDiscountPercentage(Integer discountPercentage) {
+    public void setDiscountPercentage(int discountPercentage) {
         this.discountPercentage = discountPercentage;
     }
 
