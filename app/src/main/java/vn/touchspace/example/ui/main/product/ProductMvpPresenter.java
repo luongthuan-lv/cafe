@@ -8,4 +8,5 @@ public interface ProductMvpPresenter<V extends ProductMvpView> extends MvpPresen
     void getProducts(String productName);
 
     void removeProduct(String id);
+
 }

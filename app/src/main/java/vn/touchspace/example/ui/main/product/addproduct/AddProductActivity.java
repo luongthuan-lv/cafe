@@ -72,7 +72,7 @@ public class AddProductActivity extends BaseActivity implements AddProductMvpVie
                 Toast.makeText(this, "Dev ngủ quên nên chưa làm phần chọn ảnh đâu!!!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_save:
-                if(edtName.getText().toString().trim().equals("") || edtPrice.getText().toString().trim().equals("") || edtPrice.getText().toString().trim().equals("")){
+                if(edtName.getText().toString().trim().equals("") || edtPrice.getText().toString().trim().equals("") || edtType.getText().toString().trim().equals("")){
                     Toast.makeText(this, "Vui lòng không để trống!", Toast.LENGTH_SHORT).show();
                 }else{
                     mPresenter.addProduct( edtName.getText().toString().trim(), edtPrice.getText().toString().trim(), edtType.getText().toString().trim(), "");

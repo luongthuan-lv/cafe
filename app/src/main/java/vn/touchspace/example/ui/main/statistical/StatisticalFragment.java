@@ -63,7 +63,6 @@ public class StatisticalFragment extends BaseFragment implements StatisticalMvpV
         dateNow = Calendar.getInstance();
 
         startDate.add(Calendar.MONTH, -1);
-        startDate.add(Calendar.DATE, 0);
         startDate.set(Calendar.SECOND, 0);
         startDate.set(Calendar.MINUTE, 0);
         startDate.set(Calendar.HOUR_OF_DAY, 0);

@@ -67,7 +67,7 @@ public class AddInvoiceAdapter extends BaseRecyclerAdapter<AddInvoiceModel, AddI
         void fillData(AddInvoiceModel model) {
             double total = model.getNumberOfProduct() * model.getProductPrice();
             tvName.setText(model.getProductName());
-            tvQuantily.setText(String.format("%s VNĐ", String.format("%s", model.getNumberOfProduct())));
+            tvQuantily.setText(String.format("%s", String.format("%s", model.getNumberOfProduct())));
             tvTotal.setText(AppUtils.formatNumber(total));
             btnDelete.setOnClickListener(v -> callBack.onClick(total, getAdapterPosition()));
 
